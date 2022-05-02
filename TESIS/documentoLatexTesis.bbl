@@ -1,0 +1,46 @@
+\begin{thebibliography}{}
+
+\bibitem[cnn, ]{cnntoformantmeasures}
+Identification of parkinson's disease from speech using cnns and formant
+  measures.
+
+\bibitem[Aldana, 2019]{deeplearningygrabaciones}
+Aldana, B. G.-B. (2018-2019).
+\newblock {\em Diagnóstico de la enfermedad de Parkinson usando deep learning
+  y grabaciones de voz mediante teléfono móvil}.
+\newblock Universidad Politécnica de Madrid.
+
+\bibitem[Beli{\'c} et~al., 2019]{belic2019artificial}
+Beli{\'c}, M., Bobi{\'c}, V., Bad{\v{z}}a, M., {\v{S}}olaja, N.,
+  {\DJ}uri{\'c}-Jovi{\v{c}}i{\'c}, M., and Kosti{\'c}, V.~S. (2019).
+\newblock Artificial intelligence for assisting diagnostics and assessment of
+  parkinson’s disease—a review.
+\newblock {\em Clinical neurology and neurosurgery}, 184:105442.
+
+\bibitem[Frank et~al., 2006]{frank2006approach}
+Frank, C., Pari, G., and Rossiter, J.~P. (2006).
+\newblock Approach to diagnosis of parkinson disease.
+\newblock {\em Canadian family physician}, 52(7):862--868.
+
+\bibitem[Géron, 2019]{handsonmachinelearning}
+Géron, A. (2019).
+\newblock {\em Hands-On Machine Learning with Scikit-Learn, Keras, and
+  TensorFlow}.
+\newblock O’Reilly Media, Inc.
+
+\bibitem[Parkinson, 2002]{parkinson2002essay}
+Parkinson, J. (2002).
+\newblock An essay on the shaking palsy.
+\newblock {\em The Journal of neuropsychiatry and clinical neurosciences},
+  14(2):223--236.
+
+\bibitem[Sveinbjornsdottir, 2016]{sveinbjornsdottir2016clinical}
+Sveinbjornsdottir, S. (2016).
+\newblock The clinical symptoms of parkinson's disease.
+\newblock {\em Journal of neurochemistry}, 139:318--324.
+
+\bibitem[Tagle, 2019]{parkinsonhistoria}
+Tagle, D.~P. (2019).
+\newblock Historia de la enfermedad de parkinson.
+
+\end{thebibliography}

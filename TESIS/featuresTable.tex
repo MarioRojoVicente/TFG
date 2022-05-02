@@ -1,0 +1,51 @@
+
+\begin{tabularx}{1\textwidth} { 
+		| >{\raggedright\arraybackslash}X 
+		| >{\raggedright\arraybackslash}X 
+		| >{\raggedright\arraybackslash}X 
+		| >{\raggedright\arraybackslash}X |}
+	\hline
+	\textbf{Name} & \textbf{Description} & \textbf{Type} & \textbf{Units} \\
+	\hline
+	feature01  & Median F0  & real & Hz  \\
+	\hline
+	feature02  & Mean absolute F0 time derivative  & real & Hz^2 \\
+	\hline
+	feature03  & Median absolute F0 time derivative  & real & Hz^2  \\
+	\hline
+	feature04  & Mean absolute value of time derivative of RMS power  & real & Hz  \\
+	\hline
+	feature5  &Median absolute value of time derivative of RMS power  & real & Hz  \\
+	\hline
+	feature06-feature19  & Median cepstral coefficients 0-12 for entire voice recording  & real & None  \\
+	\hline
+	feature20-feature32  & Mean absolute time derivative of cepstral coefficients 0-12 across entire voice recording  & real & None  \\
+	\hline
+	feature33  & Recurrence period density entropy (RPDE) Hnorm  & real & None  \\
+	\hline
+	feature34  & Detrended fluctuation analysis (DFA) scaling parameter alpha  & real & None  \\
+	\hline
+	feature35  & Modified pitch period entropy (PPE)  & real & None  \\
+	\hline
+	feature36  & Relative spectral power 0-500Hz  & real & None  \\
+	\hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth} { 
+		| >{\raggedright\arraybackslash}X 
+		| >{\raggedright\arraybackslash}X 
+		| >{\raggedright\arraybackslash}X 
+		| >{\raggedright\arraybackslash}X |}
+	\hline
+	feature37  & Relative spectral power 500-1kHz  & real & None  \\
+	\hline
+	feature38  & Relative spectral power 1kHz-2kHz  & real & None  \\
+	\hline
+	feature39  & Relative spectral power 2kHz-4kHz  & real & None  \\
+	\hline
+	current\_age  & Age of participant when call was recorded  & Integer & Years  \\
+	\hline
+	sex  & Sex of participant  & String & ‘M’/’F’/empty  \\
+	\hline
+\end{tabularx}
+

@@ -1,0 +1,9 @@
+current_age
+feature01-05
+feature07
+feature19-31
+feature34
+feature36
+
+Feature Clipping el resto
+Log Scaling ?  02, 03, 34, 36
