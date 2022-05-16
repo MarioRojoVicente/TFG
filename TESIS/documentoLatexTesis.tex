@@ -6,14 +6,15 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tabularx}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage{tabularx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{setspace}
 \usepackage[left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm]{geometry}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{hyperref}
 
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -24,7 +25,7 @@
 	keywordstyle=\color{codegreen},
 	numberstyle=\tiny\color{codegreen},
 	stringstyle=\color{magenta},
-	basicstyle=\ttfamily,
+	basicstyle= \ttfamily,
 	breakatwhitespace=false,         
 	breaklines=true,                 
 	captionpos=b,                    
@@ -50,7 +51,7 @@
 
 \begin{document}
 	
-	\include{portadaTesis}
+	 %\include{portadaTesis}
 	
 	\section*{}
 	\begin{flushright}
@@ -185,11 +186,120 @@
 	
 	\clearpage
 	
+	\section{Theoretical Bases}
+	
+	In this paper we will be working within the field of Machine Learning, so in order to describe it I will refer to Tom Mitchell, who once described Machine Learning as: 
+	
+	\textit{"A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E."}
+	\begin{flushright}
+		\textit{- Tom Mitchell, 1997 \cite{handsonmachinelearning}}
+	\end{flushright}
+	
+	Within the context of Machine Learning there exits the branch of Deep Learning, which focuses on training Deep Neuronal Networks, this been stacks of artificial neurons that aim to represent, in a very simplified way, the human´s cerebral cortex. 
+	
+	In our case we will be analysing parametrized audio recordings and that is why I considered it could be interesting to try and implement one of the algorithms that work best for voice recognition, which are RNNs (Recursive Neuronal Networks), CNNs (Convolutional Neuronal Networks) and Transformers.
+	
+	For this paper I chose to implement a Convolutional Neuronal Network (CNN) which is a type of deep neuronal networks.
+	
+	
+	
+	%Applying ML techniques to dig into large amounts of data can help discover patterns that were not immediately apparent. This is called data mining.
+	
+	\clearpage
+	
+	\subsection{Types of Machine Learning Algorithms}
+	
+	Whether or not they are trained with human supervision (supervised, unsupervised, semisupervised, and Reinforcement Learning)
+	
+	Whether or not they can learn incrementally on the fly (online versus batch learning)
+	
+	Whether they work by simply comparing new data points to known data points, or instead by detecting patterns in the training data and building a predictive model, much like scientists do (instance-based versus model-based learning)
+	
+	Supervised learning.
+	
+	In supervised learning, the training set you feed to the algorithm includes the desired solutions, called labels
+	
+	Batch learning
+	
+	In batch learning, the system is incapable of learning incrementally: it must be trained using all the available data. This will generally take a lot of time and computing resources, so it is typically done offline. First the system is trained, and then it is launched into production and runs without learning anymore; it just applies what it has learned. This is called offline learning.
+	
+	Instance-based Learning
+	
+	This is called instance-based learning: the system learns the examples by heart, then generalizes to new cases by using a similarity measure to compare them to the learned examples (or a subset of them)
+	
+	\textbf{Problems to be faced with the data:}
+	
+	Insufficient Quantity of Training Data.
+	
+	Even for very simple problems you typically need thousands of examples, and for complex problems such as image or speech recognition you may need millions of examples.
+	
+	Nonrepresentative Training Data
+	
+	In order to generalize well, it is crucial that your training data be representative of the new cases you want to generalize to. This is true whether you use instance-based learning or model-based learning.
+	
+	It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed. This is called sampling bias.
+	
+	Poor-Quality Data %debería considerarlo ? 
+	Synapse tiene un control de calidad, columna que categoriza el audio en correcto o no 
+	
+	Irrelevant Features
+	As the saying goes: garbage in, garbage out. Your system will only be capable of learning if the training data contains enough relevant features and not too many irrelevant ones. A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process, called feature engineering, involves the following steps:
+	
+	Feature selection (selecting the most useful features to train on among existing features)*
+	
+	Feature extraction (combining existing features to produce a more useful one as we saw earlier, dimensionality reduction algorithms can help)
+	
+	Creating new features by gathering new data
+	
+	*Visualization algorithms are also good examples of unsupervised learning
+	
+	A related task is dimensionality reduction, in which the goal is to simplify the data without losing too much information. One way to do this is to merge several correlated features into one. For example, a car’s mileage may be strongly correlated with its age, so the dimensionality reduction algorithm will merge them into one feature that represents the car’s wear and tear. This is called feature extraction.
+	
+	\textbf{Problems to be faced with the algorithm:}
+	
+	In Machine Learning this is called overfitting: it means that the model performs well on the training data, but it does not generalize well.
+	
+	Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. Here are possible solutions:
+	
+	*Simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data, or by constraining the model. (regularization)
+	
+	Gather more training data.
+	
+	Reduce the noise in the training data (e.g., fix data errors and remove outliers).
+	
+	*The amount of regularization to apply during learning can be controlled by a hyperparameter. A hyperparameter is a parameter of a learning algorithm (not of the model). As such, it is not affected by the learning algorithm itself; it must be set prior to training and remains constant during training. If you set the regularization hyperparameter to a very large value, you will get an almost flat model (a slope close to zero); the learning algorithm will almost certainly not overfit the training data, but it will be less likely to find a good solution. Tuning hyperparameters is an important part of building a Machine Learning system (you will see a detailed example in the next chapter).
+	
+	As you might guess, underfitting is the opposite of overfitting: it occurs when your model is too simple to learn the underlying structure of the data.
+	
+	Select a more powerful model, with more parameters.
+	Feed better features to the learning algorithm (feature engineering).
+	Reduce the constraints on the model (e.g., reduce the regularization hyperparameter).
+	
+	\textbf{Training:}
+	
+	A better option is to split your data into two sets: the training set and the test set. As these names imply, you train your model using the training set, and you test it using the test set. The error rate on new cases is called the generalization error (or out-of-sample error), and by evaluating your model on the test set, you get an estimate of this error. This value tells you how well your model will perform on instances it has never seen before.
+	
+	A common solution to this problem is called holdout validation: you simply hold out part of the training set to evaluate several candidate models and select the best one. The new held-out set is called the validation set (or sometimes the development set, or dev set).
+	
+	Esto es más para saber cómo hacerlo que para incluirlo en la memoria.
+	
+	More specifically, you train multiple models with various hyperparameters on the reduced training set (i.e., the full training set minus the validation set), and you select the model that performs best on the validation set. After this holdout validation process, you train the best model on the full training set (including the validation set), and this gives you the final model. Lastly, you evaluate this final model on the test set to get an estimate of the generalization error.
+	
+	cross-validation?? 
+	
+	%https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c
+	
+	\clearpage
+	
 	\section{Data}
 	
 	In order to apply any Machine Learning algorithm we need a data set, in this case I will be utilizing one extracted from the Synapse platform. This data set provides 74 different data from a total of 779 participants, all of which has been previously anonymized. From the initial data I will only feed values for the following 40 attributes to the Neuronal Network:
 	
-	%\include{featuresTable}
+	\vspace{5mm}
+	
+	\input{featuresTable}
+	
+	\vspace{5mm}
 	
 	I have selected all the parameters related to the voice recordings as well as the sex and current age which I believe could be relevant for the classification process.
 	 
@@ -267,9 +377,9 @@
 	
 	\subsection{Normalizing The Data Set And Transforming Non Numerical Values }
 	
-	Normalizing the data previously to training a Neuronal Network with it bares the benefit of speeding up the learning rates by leading to a faster convergence, this is archived by adjusting the range of values of the different attributes to be the same.
+	Normalizing the data previously to training a Neuronal Network with it bares the benefit of speeding up the learning rates by leading to a faster convergence, this is archived by adjusting the range of values of the different attributes to be the same.\cite{normalization}
 	
-	In my case I first implemented the min max technique which consists in transforming for every feature it´s minimum value to a zero, it´s maximum value to a one, and then every other value to a decimal between this two.
+	In my case I first implemented the min max technique which consists in transforming for every feature it´s minimum value to a zero, it´s maximum value to a one, and then every other value to a decimal between this two.\cite{normalizationTechniques}
 	
 	\[ x \forall Z \]
 	\[ f(x) = (x - MIN(Z))/(MAX(Z)-MIN(Z)) \]
@@ -284,7 +394,7 @@
 		\caption{Histogram for a normalized attribute with outliers. Feature02}
 	\end{figure}
 	
-	In order to minimize the impact of applying the min max technique to those attributes with outliers I decided to apply feature clipping which caps a all features above and below the given boundaries to a fixed value, this on time will help spread the feature values over the entire range. Although this is a helpful technique I did not considered it appropriate for the features which plot shape was similar to the one in Figure 1 and only aplyed it to the features with plots that looked like the following figure.
+	In order to minimize the impact of applying the min max technique to those attributes with outliers I decided to apply feature clipping which caps a all features above and below the given boundaries to a fixed value, this on time will help spread the feature values over the entire range. Although this is a helpful technique I did not considered it appropriate for the features which plot shape was similar to the one in Figure 1 and only applied it to some of the attributes with plots that looked similar to the following figure.
 	
 	\begin{figure}[h]
 		\label{Feature24N}
@@ -292,20 +402,51 @@
 		\caption{Histogram for a normalized attribute with outliers. Feature24}
 	\end{figure}
 
-	Which after the feature clipping ended up looking like this:
+	Which after the feature clipping process ended up looking like this:
 	
 	\begin{figure}[H]
 		\label{Feature24NC}
-		\includegraphics{}
+		\includegraphics{img/plots/feature24NClip.png}
 		\caption{Histogram for a normalized and clipped attribute. Feature24}
 	\end{figure}
 
-	Finally to the several attributes with a value distribution similar to the one presented by "feature02" I thought about applying Log Scaling, which aims to compress a wide range of values into a smaller range and is nice to use when a handful of the values repeat many times as happens for those attributes.
+	In order to archive this improvement in the closeness of the different attributes distributions shapes to a normal distribution I implemented a function based on the Z-Score value of the elements to eliminate any and all outliers of the distribution that showed a relevant degree of skewness whether it is to the right or left.
+	
+	The formula for the Z-Score is $ Z-Score(x) = (x - \mu)/\sigma $ where $\mu$ stands for the mean and $\sigma$ the standard deviation of the distribution D for which $X \in D$.\cite{datascienceZscore}
+	
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+	def clipZScores(data_frame):
+		current_dataframe = data_frame.copy()
+		z_scores = zscore(current_dataframe[CLIP_FEATURES])
+		abs_z_scores = np.abs(z_scores)
+		filtered_entries = (abs_z_scores < 2).all(axis=1)
+		new_df = current_dataframe[filtered_entries]
+		return new_df
+	\end{lstlisting}
+
+	Finally to the several attributes with a value distribution similar to the one presented by "feature02" I thought about applying Log Scaling, which aims to compress a wide range of values into a smaller range and is nice to use when a handful of the values repeat many times as happens for those attributes.\cite{normalizationTechniques}
 	
 	\[ x \forall Z \]
 	\[ f(x) = log(x) \]
 	
-	It was after my initial attempt that I realized that many of those attributes have features with zero and negative values which actually complicates the application of the Log Scaling and so I decided to try using the RobustScaler from Python´s sklearn library.
+	It was after my initial attempt that I realized that many of those attributes have features with zero and negative values which actually complicates the application of the Log Scaling and so I decided to try using the RobustScaler and StandardScaler from Python´s sklearn library.
+	
+	The RobustScaler uses the same formula $f(x) = (x - M)/(Q3-Q1)) $ where M stands for the median and Q1 and Q3 for the first and third quartiles of a distribution D for which $X \in D$.\cite{normalizeSkLearn}
+	
+	The StandardScaler uses the same formula that was implemented for calculating the Z-Score values in the clipZScores function shown above.
+	
+	\begin{figure}[H]
+		\label{Feature03Comparidson}
+		\includegraphics[height=34mm]{img/plots/feature03N.png}
+		\includegraphics[height=34mm]{img/plots/feature03NStandard.png}
+		\includegraphics[height=34mm]{img/plots/feature03NRobust.png}
+		\caption[width=50mm]{Comparison for normalization applying max min, RobustScaler and StandardScaler. Feature03}
+	\end{figure}
+
+	As It can be appreciated in the different plots none of the different techniques got a final distribution closer to a normal than the others and so I decided to simply apply max min to all the attributes.
 	
 	At this point in time I also assigned numerical values to "sex", which happens to be the only non numerical attribute  that was selected as input for the Neuronal Network. This particular attribute only has two possible values after the cleaning process which are "F" for female participants and "M" for male ones, and so the following function assigns the value 1 for male participants and 0 for female ones.
 	
@@ -328,14 +469,68 @@
 	
 	\clearpage
 	
-	\subsection{Splitting The Data Set Into Training, Test and Validation}
+	\subsection{Splitting The Data Set}
 	
+	When working with Neuronal Notworks among other machine learning algorithms it is important to prepare several Data sets for the different activities related to the training of the program and the evaluation of its results. In order to do so it is advisable to split the data in the following three different groups:\cite{dateTestsDefs}
 	
+	\begin{itemize}
+		
+		\item \textbf{The training data set:} which includes all the data to which the model will be fitted.
+		
+		\item \textbf{The validation data set:} which includes all the data to be used as reference for the evaluation of a model fit while fine tuning its hyper parameters. The evaluation of the algorithm over this dataset produces the so called data snooping bias which could make it so your predictions are too optimistic.
+		
+		\item \textbf{The test data set:} which includes all the data to be used as unbiased reference for the evaluation of an already tuned model fit. The evaluation over this dataset can only be affected by the bias derived from choosing some metrics or the others to evaluate the performance of the algorithm.
+		
+	\end{itemize}
+
+	The creation and implementation of this three groups in the different stages of the training process has the objective of obtaining a final evaluation of the performance of the algorithm as realistic as possible by avoiding any non realistic outcomes that could come from of the over or under fitting of the model to the training data.
+	
+	Although our dataset came already divided in two files one for train and one for test both files have approximately the same size, 388 elements on the train file and 390 on the one for test, which did not mach the distribution I was looking for. In order to make sets of the sizes I was aiming for I first combined both files into one dataframe and later created the different sets with the following function that I got from the Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow \footnote{The function was originally named split\_train\_test but I decided to rename it to something more fitting to its porpouse within the scope of this project.} \cite{handsonmachinelearning}:
+	
+		\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+	def split_dataset(data, test_ratio):
+		shuffled_indices = np.random.permutation(len(data))
+		test_set_size = int(len(data) * test_ratio)
+		test_indices = shuffled_indices[:test_set_size]
+		train_indices = shuffled_indices[test_set_size:]
+		return data.iloc[train_indices], data.iloc[test_indices]
+	\end{lstlisting}
+	
+	And so after applying all the steps from the previously described data cleaning process I utilized this function to first divide the dataframe containing all the data into the train and validation data sets with a proportion of 80 to 20 and afterwards divide the train data set into the train and test data sets again with the same proportions.
+	
+	After all of this I ended up with train, validation and test datasets consisting of 238, 74 and 59 elements respectively.
 	
 	\clearpage
 	
 	\subsection{Generating The Labels}
 	
+	The final step was then to generate the labels for each feature and for this I decided to create two separate groups. This first one would encompass all elements with a value for the attribute "years\_since\_first\_symptom" grater than 0 and the second one  would be its complementary. Finally I labeled all the elements within the firsts group with a value of 1 and the others with 0. 
+	
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+	def getDataFrameLabels(data_frame):
+		TIENE_PARKINSON = 1
+		NO_TIENE_PARKINSON = 0
+		data_labels = []
+		data_frame.head()
+		for elem in data_frame["years_since_first_symptom"]:
+			if (elem > 0):
+				data_labels.append(TIENE_PARKINSON)
+			else:
+				data_labels.append(NO_TIENE_PARKINSON)
+		return data_labels
+	\end{lstlisting}
+	
+	I applied this process to each of the previously generated train, test and validation data sets individually. 
+	
+	\clearpage
+	
+	\section{Application}
 	
 	\clearpage
 	
@@ -345,110 +540,13 @@
 	
 	\clearpage
 	
-	\section{Theoretical Bases}
-	
-	In this paper we will be working within the field of Machine Learning, so in order to describe it I will refer to Tom Mitchell, who referred to Machine Learning as follows: 
-	
-	\textit{"A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E."}
-	\begin{flushright}
-	\textit{- Tom Mitchell, 1997 \cite{handsonmachinelearning}}
-	\end{flushright}
-	
-	For this paper I will focus on implementing a Convolutional Neuronal Network (CNN) 
-	
-	The difference between ML and Deep Learning, 
-	
-	While machine learning 
-	
-	 Applying ML techniques to dig into large amounts of data can help discover patterns that were not immediately apparent. This is called data mining.
-	 
-	 RNNs, CNNs, or Transformers for voice recognition
-	 
-	 \textbf{Types of Machine Learning Systems}
-	 
-	 Whether or not they are trained with human supervision (supervised, unsupervised, semisupervised, and Reinforcement Learning)
-	 
-	 Whether or not they can learn incrementally on the fly (online versus batch learning)
-	 
-	 Whether they work by simply comparing new data points to known data points, or instead by detecting patterns in the training data and building a predictive model, much like scientists do (instance-based versus model-based learning)
-	 
-	 Supervised learning.
-	 
-	 In supervised learning, the training set you feed to the algorithm includes the desired solutions, called labels
-	 
-	 Batch learning
-	 
-	 In batch learning, the system is incapable of learning incrementally: it must be trained using all the available data. This will generally take a lot of time and computing resources, so it is typically done offline. First the system is trained, and then it is launched into production and runs without learning anymore; it just applies what it has learned. This is called offline learning.
-	 
-	 Instance-based Learning
-	 
-	 This is called instance-based learning: the system learns the examples by heart, then generalizes to new cases by using a similarity measure to compare them to the learned examples (or a subset of them)
-	 
-	 \textbf{Problems to be faced with the data:}
-	 
-	 Insufficient Quantity of Training Data.
-	 
-	 Even for very simple problems you typically need thousands of examples, and for complex problems such as image or speech recognition you may need millions of examples.
-	 
-	 Nonrepresentative Training Data
-	 
-	 In order to generalize well, it is crucial that your training data be representative of the new cases you want to generalize to. This is true whether you use instance-based learning or model-based learning.
-	 
-	 It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed. This is called sampling bias.
-	 
-	 Poor-Quality Data %debería considerarlo ? 
-	 Synapse tiene un control de calidad, columna que categoriza el audio en correcto o no 
-	 
-	 Irrelevant Features
-	 As the saying goes: garbage in, garbage out. Your system will only be capable of learning if the training data contains enough relevant features and not too many irrelevant ones. A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process, called feature engineering, involves the following steps:
-	 
-	 Feature selection (selecting the most useful features to train on among existing features)*
-	 
-	 Feature extraction (combining existing features to produce a more useful one as we saw earlier, dimensionality reduction algorithms can help)
-	 
-	 Creating new features by gathering new data
-	 
-	 *Visualization algorithms are also good examples of unsupervised learning
-	 
-	 A related task is dimensionality reduction, in which the goal is to simplify the data without losing too much information. One way to do this is to merge several correlated features into one. For example, a car’s mileage may be strongly correlated with its age, so the dimensionality reduction algorithm will merge them into one feature that represents the car’s wear and tear. This is called feature extraction.
-	 
-	 \textbf{Problems to be faced with the algorithm:}
-	 
-	 In Machine Learning this is called overfitting: it means that the model performs well on the training data, but it does not generalize well.
-	 
-	 Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. Here are possible solutions:
-	 
-	 *Simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data, or by constraining the model. (regularization)
-	 
-	 Gather more training data.
-	 
-	 Reduce the noise in the training data (e.g., fix data errors and remove outliers).
-	 
-	 *The amount of regularization to apply during learning can be controlled by a hyperparameter. A hyperparameter is a parameter of a learning algorithm (not of the model). As such, it is not affected by the learning algorithm itself; it must be set prior to training and remains constant during training. If you set the regularization hyperparameter to a very large value, you will get an almost flat model (a slope close to zero); the learning algorithm will almost certainly not overfit the training data, but it will be less likely to find a good solution. Tuning hyperparameters is an important part of building a Machine Learning system (you will see a detailed example in the next chapter).
-	 
-	 As you might guess, underfitting is the opposite of overfitting: it occurs when your model is too simple to learn the underlying structure of the data.
-	 
-	 Select a more powerful model, with more parameters.
-	 Feed better features to the learning algorithm (feature engineering).
-	 Reduce the constraints on the model (e.g., reduce the regularization hyperparameter).
-	 
-	 \textbf{Training:}
-	 
-	 A better option is to split your data into two sets: the training set and the test set. As these names imply, you train your model using the training set, and you test it using the test set. The error rate on new cases is called the generalization error (or out-of-sample error), and by evaluating your model on the test set, you get an estimate of this error. This value tells you how well your model will perform on instances it has never seen before.
-	 
-	 A common solution to this problem is called holdout validation: you simply hold out part of the training set to evaluate several candidate models and select the best one. The new held-out set is called the validation set (or sometimes the development set, or dev set).
-	 
-	 	Esto es más para saber cómo hacerlo que para incluirlo en la memoria.
-	 	
-	 More specifically, you train multiple models with various hyperparameters on the reduced training set (i.e., the full training set minus the validation set), and you select the model that performs best on the validation set. After this holdout validation process, you train the best model on the full training set (including the validation set), and this gives you the final model. Lastly, you evaluate this final model on the test set to get an estimate of the generalization error.
-	
-	cross-validation?? 
-	
-	https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c
+	\section{Conclusions}
 	
 	\clearpage
 	
-	\section{Conclusion}
+	\subsection{Possible Future Work Lines}
+	
+	Yet another important unsupervised task is anomaly detection—for example, detecting unusual credit card transactions to prevent fraud, catching manufacturing defects, or automatically removing outliers from a dataset before feeding it to another learning algorithm. The system is shown mostly normal instances during training, so it learns to recognize them; then, when it sees a new instance, it can tell whether it looks like a normal one or whether it is likely an anomaly
 	
 	\clearpage
 	
@@ -457,15 +555,11 @@
 	
 	\clearpage
 	
-	\section{Possible Future Work Lines}
 	
-	Yet another important unsupervised task is anomaly detection—for example, detecting unusual credit card transactions to prevent fraud, catching manufacturing defects, or automatically removing outliers from a dataset before feeding it to another learning algorithm. The system is shown mostly normal instances during training, so it learns to recognize them; then, when it sees a new instance, it can tell whether it looks like a normal one or whether it is likely an anomaly
-	
-	\clearpage
 	
 	\bibliography{bibliografia.bib}
 	
-	\bibliographystyle{apalike}
+	\bibliographystyle{IEEEtran}
 	
 \end{document}
 
