@@ -49,8 +49,7 @@ B.~G.-B. Aldana, \emph{Diagnóstico de la enfermedad de Parkinson usando deep
   0.5em minus 0.4em\relax Universidad Politécnica de Madrid, 2018-2019.
 
 \bibitem{belic2019artificial}
-M.~Beli{\'c}, V.~Bobi{\'c}, M.~Bad{\v{z}}a, N.~{\v{S}}olaja,
-  M.~{\DJ}uri{\'c}-Jovi{\v{c}}i{\'c}, and V.~S. Kosti{\'c}, ``Artificial
+M.~B. N. o. M. u.-J. V.~S. Minja~Belić, Vladislava~Bobić, ``Artificial
   intelligence for assisting diagnostics and assessment of parkinson’s
   disease—a review,'' \emph{Clinical neurology and neurosurgery}, vol. 184,
   p. 105442, 2019.
@@ -58,6 +57,29 @@ M.~Beli{\'c}, V.~Bobi{\'c}, M.~Bad{\v{z}}a, N.~{\v{S}}olaja,
 \bibitem{cnntoformantmeasures}
 ``Identification of parkinson's disease from speech using cnns and formant
   measures.''
+
+\bibitem{cortex58}
+D.~H. HUBEL, ``Single unit activity in striate cortex of unrestrained cats,''
+  1958.
+
+\bibitem{cortex59}
+T.~N.~W. D.~H.~HUBEL, ``Eceptive fields of single neurones in the cat's striate
+  cortex,'' 1959.
+
+\bibitem{neocognitron}
+K.~Fukushima, ``Neocognitron: A self-organizing neural network model for a
+  mechanism of pattern recognition unaffected by shift in position,'' 1980.
+
+\bibitem{VGGinfo}
+G.~Boesch, ``{VGG Very Deep Convolutional Networks (VGGNet) - what you need to
+  know},''
+  \url{https://viso.ai/deep-learning/vgg-very-deep-convolutional-networks/},
+  unknown, [Online; accedido 19-05-2022].
+
+\bibitem{VGGimg}
+A.~Z. Karen~Simonyan, ``{Very Deep Convolutional Networks for Large-Scale Image
+  Recognition},'' \url{https://arxiv.org/abs/1409.1556v6 }, 2015, [Online;
+  accedido 19-05-2022].
 
 \bibitem{normalization}
 C.~Team, ``{Normalization},''
@@ -77,7 +99,7 @@ D.~S. Team, ``{MATEMÁTICA Y ESTADÍSTICA ¿Qué es un Z-Score?}''
 
 \bibitem{normalizeSkLearn}
 J.~Hale, ``{Scale, Standardize, or Normalize with Scikit-Learn},''
-  \url{https://towardsdatascience.com/scale-standardize-or-normalize-with-scikit-learn-6ccc7d176a02#:~:text=types%20of%20scales-,RobustScaler,value%20%E2%80%94%2025%25%20value).},
+  \url{{https://towardsdatascience.com/scale-standardize-or-normalize-with-scikit-learn-6ccc7d176a02#:~:text=types%20of%20scales-,RobustScaler,value%20%E2%80%94%2025%25%20value).}},
   2019, [Online; accedido 04-05-2022].
 
 \bibitem{dateTestsDefs}

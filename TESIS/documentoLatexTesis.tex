@@ -51,7 +51,7 @@
 
 \begin{document}
 	
-	 %\include{portadaTesis}
+	 \include{portadaTesis}
 	
 	\section*{}
 	\begin{flushright}
@@ -180,13 +180,14 @@
 	
 	When choosing the data to be sampled for the experiments it is also relevant to consider the pros and cons of selecting numerous sources of data versus choosing to focus on one specific type. For this paper I have decided to focus on studying voice recordings exclusively, as I find those to have great potential. Nonetheless, I will try to identify any possible relations between the outcomes of the machine learning algorithms application, and other data concerning the state of the patients such as several measurements related to the Unified Parkinson's Disease Rating Scale (UPDRS). The idea of utilizing speech analysis to detect and track the deterioration associated to the evolution of the disease comes from sysmtoms such as Dysarthria that affect this functions. \cite{cnntoformantmeasures}
 	
-	After choosing the data, it needs to be analyzed in order to separate all the relevant information from the useless bits and noise, for that we will focus on analyzing sets of traits for the data that have previously proven good efficacy when utilizing IA and Deep learning. This will be later discussed on the \textbf{Data} section of this document.
+	After choosing the data, it needs to be analyzed in order to separate all the relevant information from the useless bits and noise, for that we will focus on analyzing sets of traits for the data that have previously proven good efficacy when utilizing IA and Deep learning. This will be later discussed on the \hyperref[sec:Data]{\textbf{Data}} section of this document.
 	
-	The last thing to do would then be to choose a Neuronal Network architecture to implement, but this will be furthered discussed in the following \textbf{Theoretical Bases} section.
+	The last thing to do would then be to choose a Neuronal Network architecture to implement, but this will be furthered discussed in the following \hyperref[sec:TheoreticalBases]{\textbf{Theoretical Bases}} section.
 	
 	\clearpage
 	
 	\section{Theoretical Bases}
+	\label{sec:TheoreticalBases}
 	
 	In this paper we will be working within the field of Machine Learning, so in order to describe it I will refer to Tom Mitchell, who once described Machine Learning as: 
 	
@@ -195,109 +196,124 @@
 		\textit{- Tom Mitchell, 1997 \cite{handsonmachinelearning}}
 	\end{flushright}
 	
-	Within the context of Machine Learning there exits the branch of Deep Learning, which focuses on training Deep Neuronal Networks, this been stacks of artificial neurons that aim to represent, in a very simplified way, the human´s cerebral cortex. 
-	
-	In our case we will be analysing parametrized audio recordings and that is why I considered it could be interesting to try and implement one of the algorithms that work best for voice recognition, which are RNNs (Recursive Neuronal Networks), CNNs (Convolutional Neuronal Networks) and Transformers.
-	
-	For this paper I chose to implement a Convolutional Neuronal Network (CNN) which is a type of deep neuronal networks.
-	
-	
+	Within the context of Machine Learning there exits the branch of Deep Learning, which focuses on training Deep Neuronal Networks, this been stacks of artificial neurons that aim to represent, in a very simplified way, the human´s cerebral cortex. Which is relevant because as I will explain on the following subsection I have decided to implement a Convolutional Neuronal Network (CNN) which happens to be one of the main algorithms that belong to this category of machine learning.
 	
 	%Applying ML techniques to dig into large amounts of data can help discover patterns that were not immediately apparent. This is called data mining.
 	
 	\clearpage
 	
-	\subsection{Types of Machine Learning Algorithms}
+	\subsection{Types of Machine Learning Systems }
 	
-	Whether or not they are trained with human supervision (supervised, unsupervised, semisupervised, and Reinforcement Learning)
+	When working with Machine Learning Systems (MLS) there are several questions that have to be answered in order to decide what type of systems best fits the problem at hand: \cite{handsonmachinelearning}
 	
-	Whether or not they can learn incrementally on the fly (online versus batch learning)
+	\begin{itemize}
+		
+		\item Will the system be trained with or without human supervision ?
+		
+		\item Will the system be able to learn incrementally on the fly ?
+		
+		\item Will the system be able to detect patterns and build predictive models ?
+		
+	\end{itemize}
 	
-	Whether they work by simply comparing new data points to known data points, or instead by detecting patterns in the training data and building a predictive model, much like scientists do (instance-based versus model-based learning)
+	The answer to the first question will allow as to find which of the following four categories of MLSs best suits our model according to the amount and type of supervision they get during their training process: 
 	
-	Supervised learning.
+	\begin{itemize}
 	
-	In supervised learning, the training set you feed to the algorithm includes the desired solutions, called labels
+	\item \textbf{Supervised Learning:} in this type of training the data used for this purpose is accompanied by the desired outcomes of the system for every data instance to be used as input, those outcomes are often referred to as labels. This category includes machine learning algorithms such as Decision Trees and Support Vector Machines.
 	
-	Batch learning
+	\item \textbf{Unsupervised Learning:} in this case the train data set provided to the algorithm it´s fully unlabeled. This category includes machine learning algorithms such as clustering and association rule learning.
 	
-	In batch learning, the system is incapable of learning incrementally: it must be trained using all the available data. This will generally take a lot of time and computing resources, so it is typically done offline. First the system is trained, and then it is launched into production and runs without learning anymore; it just applies what it has learned. This is called offline learning.
+	\item \textbf{Semisupervised Learning:} as its name suggests, semisupoervised learning is a method that is half way between supervised and unsupervised learning and is most useful when working with partially labeled data sets. This category includes machine learning algorithms such as deep belief networks. The algorithms included in this group are often constructed by combining supervised and unsupervised algorithms.
 	
-	Instance-based Learning
+	\item \textbf{Reinforcement Learning:} in this case the MLS, often referred to as agent within this context, will analyze its environment, chose and perform actions and then receive a reward or penalty as a consequence of its interaction with the environment. Some examples of machine learning algorithms that fall within this group are DeepMind’s AlphaGo and many robot´s walking algorithms. 
 	
-	This is called instance-based learning: the system learns the examples by heart, then generalizes to new cases by using a similarity measure to compare them to the learned examples (or a subset of them)
+	\end{itemize}
+
+	Following the first, the second question will allows us to differentiate between the following two different groups of algorithms:
 	
-	\textbf{Problems to be faced with the data:}
+	\begin{itemize}
 	
-	Insufficient Quantity of Training Data.
+	\item \textbf{Batch Learning:} that encompasses those algorithms that need to be trained before been released to the public, using all the available data and that will not learn once deployed. This type of training often requires a big amount of resources and time to train and it requires to train and deploy a new stance of the product every time we wish for the MLS to take into account any new data.
 	
-	Even for very simple problems you typically need thousands of examples, and for complex problems such as image or speech recognition you may need millions of examples.
+	\item \textbf{Online Learning:} which includes all the algorithms that have the particularity of been able to learn after their deployment. This group is trained by sequentially feeding it with instances of the data that could be organized in small groups, often called mini batches, or individually. Due to its characteristics the algorithms within this group are often implemented in applications that require a rapid and autonomous adaptation to new incoming data or those that aim to run using limited computing resources.
+		
+	\end{itemize}
 	
-	Nonrepresentative Training Data
 	
-	In order to generalize well, it is crucial that your training data be representative of the new cases you want to generalize to. This is true whether you use instance-based learning or model-based learning.
+	Finally the last and third question will help us differentiate between:
 	
-	It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed. This is called sampling bias.
+	\begin{itemize}
+		
+	\item \textbf{Instance-based learning:} this group focuses on learning all data within the training set by heart and then implementing a measures that establishes the similarity of the new instance to the ones used for training and generalizes based on this measure so it can predict its corresponding outcome.
 	
-	Poor-Quality Data %debería considerarlo ? 
-	Synapse tiene un control de calidad, columna que categoriza el audio en correcto o no 
+	\item \textbf{Model-based learning:} which instead of predicting the outcomes by learning the training examples uses a model chosen by the architect of the MLS. The architect will often choose a model based on an analysis of the data related to the problem ans their own expertise.
+		
+	\end{itemize}
+
+	For this paper I plan on implementing a MLS that I will train personally with a fully labeled dataset, that will not be required to learn incrementally on the fly but rather will be trained once and then analyzed and that will work based on intances due to the complexity of the data. It is also relevant to consider that in this case we will be analyzing parameterized audio recordings and that is why I considered it could be interesting to try and implement one of the systems that work best for voice recognition, which I found to be RNNs (Recursive Neuronal Networks), CNNs (Convolutional Neuronal Networks) and Transformers.
 	
-	Irrelevant Features
-	As the saying goes: garbage in, garbage out. Your system will only be capable of learning if the training data contains enough relevant features and not too many irrelevant ones. A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process, called feature engineering, involves the following steps:
+	Taking all the characteristics from both the project and the dataset into account, as well as the fact that I will be working with audio recordings, I decided that the best MLS for this paper would be a Convolutional Neuronal Network (CNN).
 	
-	Feature selection (selecting the most useful features to train on among existing features)*
+	\clearpage
 	
-	Feature extraction (combining existing features to produce a more useful one as we saw earlier, dimensionality reduction algorithms can help)
+	\subsection{The CNN Model and VGG Architecture}
 	
-	Creating new features by gathering new data
+	In order to understand what a CNN is, we first need to establish a definition for Neuronal Network. 
 	
-	*Visualization algorithms are also good examples of unsupervised learning
+	Therefore we will establish an Artificial Neuronal Network (ANN) also referred to as Neuronal Network (NN) to be a machine learning model based of the networks of biological neurons found in our brains. This model is constituted by one or more layers of any number of artificial neurons, which are at the same time inspired in their biological counterpart. While the original model came from this biological analogy, with time ANN have deviated further and further away from their biological counterpart and so today some researchers argue that this analogy should no longer be considered appropriate.
 	
-	A related task is dimensionality reduction, in which the goal is to simplify the data without losing too much information. One way to do this is to merge several correlated features into one. For example, a car’s mileage may be strongly correlated with its age, so the dimensionality reduction algorithm will merge them into one feature that represents the car’s wear and tear. This is called feature extraction.
+	Now that we have a basic understanding of what a ANN is be can further delve into our solution by addressing what a CNN truly is and what makes them stand out from other ANN based models.
 	
-	\textbf{Problems to be faced with the algorithm:}
+	On 1958\cite{cortex58} and 1959\cite{cortex59} David H. Hubel and Torsten Wiesel, realized several experiments on the structure and working mechanics of the visual cortex of cats. This studies set the foundations of the biological model that later on will serve as analogy for the creation of the Neocognitron\cite{neocognitron} in 1980 which was the predecessor of the more modern CNNs.
 	
-	In Machine Learning this is called overfitting: it means that the model performs well on the training data, but it does not generalize well.
+	CNN architectures are often constructed with several building blocks common to other Neuronal Networks such as \textit{Fully Connected Layers}\footnote{A fully connected layer is a type of layer in which all its neurons are all connected to every element of the input of the layer.} and \textit{Sigmoid Activation Functions}\footnote{The sigmoid function is given by $\sigma(x) = 1/(1+exp(-x))$.}\footnote{An activation function is a function implemented by some artificial neurons to produce its output given a weighted sum of inputs. There are many type of activation functions such as sigmoid and relu. }, but also include two more specialized building blocks the Convolutional and Pooling layers:
 	
-	Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. Here are possible solutions:
+	\begin{itemize}
+		
+		\item \textbf{Convolutional Layer:} this new type of layer works by connecting its neurons not the totality of the output of the previous layer, but rather to a smaller rectangular fraction of it, referred to as the neuron´s receptive field. In an image for example a particular neuron could be connected to a grid of $Z \cdot Y$ adjacent pixels. 
+		
+		\begin{figure}[H]
+			\centering
+			\label{ConvLayer}
+			\includegraphics[height=38mm]{img/convLayer.png}
+			\caption{Visual representation of the effects of convolution layers.\cite{handsonmachinelearning}}
+		\end{figure}
+		
+		\item \textbf{Pooling Layer:} this layer is often used to reduce the risk of overfitting as well as the computational requirements of any CNN. It works much like the previously described convolutional layer, its objective been to subsample the layer´s input. In this layer the artificial neurons apply an aggregation function such as the max or mean to their input in order to reduce its dimensions,
+		
+	\end{itemize}
 	
-	*Simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data, or by constraining the model. (regularization)
+	\begin{figure}[H]
+		\centering
+		\label{MaxPoolLayer}
+		\includegraphics{img/maxPoolingLayer.png}
+		\caption{Visual representation of the effects of pooling layers. \cite{handsonmachinelearning}}
+	\end{figure}
+
+	After realizing extensive research and discussing with several peers and professors I decided to go with the Visual Geometry Group (VGG) architecture for my neuronal network which focuses on the use of deep convolutional models. Based on this architecture two main models have been established that are referred to by the architecture´s acronym followed by the number of layers they support, those been the VGG-16 and VGG-19 models.\cite{VGGinfo}
 	
-	Gather more training data.
+	\vspace{5mm}
+	\begin{figure}[h]
+		\label{VGGArchitecture}
+		\includegraphics[width=150mm]{img/vgg-neural-network-architecture.jpg}
+		\caption{Visual representation of a VGG architecture. \cite{VGGimg}}
+	\end{figure}
+	\vspace{5mm}
+
+	From the two models previously presented I decided to apply in this paper the VGG-16 architecture, the smaller of the two, as the problem at hand only has a dimensionality of 40 (there are 40 attributes that will be imputed in the network), and if the models turns out to be too big for the problem it could lead to problems such as overfitting. This will be furthered developed in the subsection \hyperref[sec:ProblemsWithAlgorithm]{\textbf{Problems with the Algorithm}} of the \hyperref[sec:CNNImplementation]{\textbf{Implementation of the CNN}} section of this paper.
 	
-	Reduce the noise in the training data (e.g., fix data errors and remove outliers).
-	
-	*The amount of regularization to apply during learning can be controlled by a hyperparameter. A hyperparameter is a parameter of a learning algorithm (not of the model). As such, it is not affected by the learning algorithm itself; it must be set prior to training and remains constant during training. If you set the regularization hyperparameter to a very large value, you will get an almost flat model (a slope close to zero); the learning algorithm will almost certainly not overfit the training data, but it will be less likely to find a good solution. Tuning hyperparameters is an important part of building a Machine Learning system (you will see a detailed example in the next chapter).
-	
-	As you might guess, underfitting is the opposite of overfitting: it occurs when your model is too simple to learn the underlying structure of the data.
-	
-	Select a more powerful model, with more parameters.
-	Feed better features to the learning algorithm (feature engineering).
-	Reduce the constraints on the model (e.g., reduce the regularization hyperparameter).
-	
-	\textbf{Training:}
-	
-	A better option is to split your data into two sets: the training set and the test set. As these names imply, you train your model using the training set, and you test it using the test set. The error rate on new cases is called the generalization error (or out-of-sample error), and by evaluating your model on the test set, you get an estimate of this error. This value tells you how well your model will perform on instances it has never seen before.
-	
-	A common solution to this problem is called holdout validation: you simply hold out part of the training set to evaluate several candidate models and select the best one. The new held-out set is called the validation set (or sometimes the development set, or dev set).
-	
-	Esto es más para saber cómo hacerlo que para incluirlo en la memoria.
-	
-	More specifically, you train multiple models with various hyperparameters on the reduced training set (i.e., the full training set minus the validation set), and you select the model that performs best on the validation set. After this holdout validation process, you train the best model on the full training set (including the validation set), and this gives you the final model. Lastly, you evaluate this final model on the test set to get an estimate of the generalization error.
-	
-	cross-validation?? 
-	
-	%https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c
 	
 	\clearpage
 	
 	\section{Data}
+	\label{sec:Data}
 	
 	In order to apply any Machine Learning algorithm we need a data set, in this case I will be utilizing one extracted from the Synapse platform. This data set provides 74 different data from a total of 779 participants, all of which has been previously anonymized. From the initial data I will only feed values for the following 40 attributes to the Neuronal Network:
 	
 	\vspace{5mm}
 	
-	\input{featuresTable}
+	%\input{featuresTable}
 	
 	\vspace{5mm}
 	
@@ -503,6 +519,8 @@
 	
 	After all of this I ended up with train, validation and test datasets consisting of 238, 74 and 59 elements respectively.
 	
+	%No incluir en la memoria. More specifically, you train multiple models with various hyperparameters on the reduced training set (i.e., the full training set minus the validation set), and you select the model that performs best on the validation set. After this holdout validation process, you train the best model on the full training set (including the validation set), and this gives you the final model. Lastly, you evaluate this final model on the test set to get an estimate of the generalization error.
+	
 	\clearpage
 	
 	\subsection{Generating The Labels}
@@ -530,11 +548,65 @@
 	
 	\clearpage
 	
-	\section{Application}
+	\section{Implementation of the CNN}
+	\label{sec:CNNImplementation}
 	
 	\clearpage
 	
-	\subsection{Balancing The Data Set}
+	\subsection{Problems with the algorithm}
+	\label{sec:ProblemsWithAlgorithm}
+	
+	In Machine Learning this is called overfitting: it means that the model performs well on the training data, but it does not generalize well.
+	
+	Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. Here are possible solutions:
+	
+	*Simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data, or by constraining the model. (regularization)
+	
+	Gather more training data.
+	
+	Reduce the noise in the training data (e.g., fix data errors and remove outliers).
+	
+	*The amount of regularization to apply during learning can be controlled by a hyperparameter. A hyperparameter is a parameter of a learning algorithm (not of the model). As such, it is not affected by the learning algorithm itself; it must be set prior to training and remains constant during training. If you set the regularization hyperparameter to a very large value, you will get an almost flat model (a slope close to zero); the learning algorithm will almost certainly not overfit the training data, but it will be less likely to find a good solution. Tuning hyperparameters is an important part of building a Machine Learning system (you will see a detailed example in the next chapter).
+	
+	As you might guess, underfitting is the opposite of overfitting: it occurs when your model is too simple to learn the underlying structure of the data.
+	
+	Select a more powerful model, with more parameters.
+	Feed better features to the learning algorithm (feature engineering).
+	Reduce the constraints on the model (e.g., reduce the regularization hyperparameter).
+	
+	\clearpage
+	
+	\subsection{Problems with the data}
+	
+	Insufficient Quantity of Training Data.
+	
+	Even for very simple problems you typically need thousands of examples, and for complex problems such as image or speech recognition you may need millions of examples.
+	
+	Nonrepresentative Training Data
+	
+	In order to generalize well, it is crucial that your training data be representative of the new cases you want to generalize to. This is true whether you use instance-based learning or model-based learning.
+	
+	It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed. This is called sampling bias.
+	
+	Poor-Quality Data %debería considerarlo ? 
+	Synapse tiene un control de calidad, columna que categoriza el audio en correcto o no 
+	
+	Irrelevant Features
+	As the saying goes: garbage in, garbage out. Your system will only be capable of learning if the training data contains enough relevant features and not too many irrelevant ones. A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process, called feature engineering, involves the following steps:
+	
+	Feature selection (selecting the most useful features to train on among existing features)*
+	
+	Feature extraction (combining existing features to produce a more useful one as we saw earlier, dimensionality reduction algorithms can help)
+	
+	Creating new features by gathering new data
+	
+	*Visualization algorithms are also good examples of unsupervised learning
+	
+	A related task is dimensionality reduction, in which the goal is to simplify the data without losing too much information. One way to do this is to merge several correlated features into one. For example, a car’s mileage may be strongly correlated with its age, so the dimensionality reduction algorithm will merge them into one feature that represents the car’s wear and tear. This is called feature extraction.
+	
+	\clearpage
+	
+	\subsubsection{Balancing The Data Set}
 	
 	
 	
