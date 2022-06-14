@@ -11,7 +11,8 @@
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{setspace}
-\usepackage[left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm]{geometry}
+%\usepackage[left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm]{geometry}
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{hyperref}
@@ -43,7 +44,7 @@
 \setlength{\parskip}{1em}
 \renewcommand{\arraystretch}{1.5}
 
-\title{Exploration of Parkinson's disease recognition space by artificial neuron networks.}
+\title{Exploration of Parkinson's disease recognition space by artificial neural networks.}
 \author{Mario Rojo Vicente}
 \date{}	 							%fecha de entrega
 
@@ -54,16 +55,18 @@
 	 \include{portadaTesis}
 	
 	\section*{}
-	\begin{flushright}
+	\begin{flushleft}
 		\vspace*{\fill}
-		Acknowledgment
+		To Francisco Díaz Perez, that not only helped me by directing this project but was the original creator of the idea behind it and kindly allowed me to further develop it under his close watch, to Rubén ... and Daniel Rebollar Medina who kindly shared their knowledge and experience with me in the complex nut beautiful world of Machine Learning, and last but not least to my always loving family without who´s unconditional support I could have never archived the feat of completing this paper. To all of you I express my sincerest gratitude from the bottom of my hart.
 		\vspace*{\fill}
 		
-	\end{flushright}
+	\end{flushleft}
 
 	\clearpage
 	
 	\section*{Abstract}
+	
+	This paper focuses on the objective a Machine Learning model to classify the advancement of Parkinson´s Disease on a patient given some audio recordings and general information, such as age and gender. For this we will utilize a dataset extracted from synapse to train the several proposed models and finally extract conclusions on the outcomes. This project focuses on the implementation of CNN models based of the VGG-16 architecture. The results ranges from a 30\% accuracy to around a 60\% on all three datasets (train, validation and test) depending on the model and its hyper parameters, as well as the processes applied on the data. In conclusion the project was lacking more instances of reliable data but shows the possibilities of implementing such models on bigger datasets with rather significant results.
 	
 	%purpose, method, scope, results, and conclusion
 	
@@ -156,15 +159,15 @@
 	
 	\begin{itemize}
 		
-		\item \textbf{State Of Art:}
 		
-		\item \textbf{Theoretical Bases:}   
+		\item \textbf{Theoretical Bases:} where we will establish the basics in order to explain why we took most of the relevant decisions of this paper as well as study other possible developments and establish comparisons between those and the one selected.
 		
-		\item \textbf{Data:}
+		\item \textbf{Data:} where we will explain all the processes to which the data has been subjected as well as the reasons behind the implementation of every of this processes.
 		
-		\item \textbf{Conclusion:}
+		\item \textbf{Implementing the CNN:} where we will explain the implementation process for the models as well as any problems that could arise during their implementation and what we do to try and solve them.
 		
-		\item \textbf{Social Implications:}
+		\item \textbf{Conclusion:} where we will summarize the outcomes of this paper as well as analyze any possible flaws and strong points on the implementation of the project and the models implemented. In this section we will also realize a comparative analysis of the different models proposed for the implementation.
+		
 		
 	\end{itemize}
 
@@ -294,14 +297,14 @@
 	After realizing extensive research and discussing with several peers and professors I decided to go with the Visual Geometry Group (VGG) architecture for my neuronal network which focuses on the use of deep convolutional models. Based on this architecture two main models have been established that are referred to by the architecture´s acronym followed by the number of layers they support, those been the VGG-16 and VGG-19 models.\cite{VGGinfo}
 	
 	\vspace{5mm}
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\label{VGGArchitecture}
-		\includegraphics[width=150mm]{img/vgg-neural-network-architecture.jpg}
+		\includegraphics[width=140mm]{img/vgg-neural-network-architecture.jpg}
 		\caption{Visual representation of a VGG architecture. \cite{VGGimg}}
 	\end{figure}
 	\vspace{5mm}
 
-	From the two models previously presented I decided to apply in this paper the VGG-16 architecture, the smaller of the two, as the problem at hand only has a dimensionality of 40 (there are 40 attributes that will be imputed in the network), and if the models turns out to be too big for the problem it could lead to problems such as overfitting. This will be furthered developed in the subsection \hyperref[sec:ProblemsWithAlgorithm]{\textbf{Problems with the Algorithm}} of the \hyperref[sec:CNNImplementation]{\textbf{Implementation of the CNN}} section of this paper.
+	From the two models previously presented I decided to apply in this paper the VGG-16 architecture, the smaller of the two, as the problem at hand only has a dimensionality of 40 (there are 40 attributes that will be imputed in the network), and if the models turns out to be too big for the problem it could lead to problems such as overfitting..
 	
 	
 	\clearpage
@@ -313,7 +316,7 @@
 	
 	\vspace{5mm}
 	
-	%\input{featuresTable}
+	\input{featuresTable}
 	
 	\vspace{5mm}
 	
@@ -456,9 +459,9 @@
 	
 	\begin{figure}[H]
 		\label{Feature03Comparidson}
-		\includegraphics[height=34mm]{img/plots/feature03N.png}
-		\includegraphics[height=34mm]{img/plots/feature03NStandard.png}
-		\includegraphics[height=34mm]{img/plots/feature03NRobust.png}
+		\includegraphics[height=32mm]{img/plots/feature03N.png}
+		\includegraphics[height=32mm]{img/plots/feature03NStandard.png}
+		\includegraphics[height=32mm]{img/plots/feature03NRobust.png}
 		\caption[width=50mm]{Comparison for normalization applying max min, RobustScaler and StandardScaler. Feature03}
 	\end{figure}
 
@@ -532,15 +535,15 @@
 	\begin{lstlisting}[language=Python]
 		
 	def getDataFrameLabels(data_frame):
-		TIENE_PARKINSON = 1
-		NO_TIENE_PARKINSON = 0
+		PARKINSON = 1
+		NOT_PARKINSON = 0
 		data_labels = []
 		data_frame.head()
 		for elem in data_frame["years_since_first_symptom"]:
 			if (elem > 0):
-				data_labels.append(TIENE_PARKINSON)
+				data_labels.append(PARKINSON)
 			else:
-				data_labels.append(NO_TIENE_PARKINSON)
+				data_labels.append(NOT_PARKINSON)
 		return data_labels
 	\end{lstlisting}
 	
@@ -549,81 +552,655 @@
 	\clearpage
 	
 	\section{Implementation of the CNN}
-	\label{sec:CNNImplementation}
+	
+	In this section I will be tackling the implementation of the original model in keras as well as the different adjustments that I did in order to correct them. I will address all the different problems in the same order I faced them so that the reader can get a clearer view of the implementation process for the CNN in this paper.
+	
+	The first thing was to start of by implementing a VGG-16 architecture based CNN for which I implemented the basic code for the model, which can be found in the article "Step by step VGG16 implementation in Keras for beginners" \cite{VGG16implementation}. Based on this model I did have to apply several changes in order for it to fit our problem but I did so by trying to stay as true to the original architecture as I possibly could. Among this changes the most significant where the substitution of all the two dimensional layers within the model for their one dimensional counterparts, as the original model was meant for working with images and we would be working with a one dimensional vector of features instead, and the change in input shape of the initial layer as well as the number of units on the last one so that the input and output sizes fit our particular classification problem. After all this changes the final model looked as follows:
+	
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model = Sequential()
+		model.add(Conv1D(input_shape=TRAIN_ARRAY.shape[1:],filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(Conv1D(filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=128, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=128, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=256, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=256, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=256, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Flatten())
+		model.add(Dense(units=4096,activation="relu"))
+		model.add(Dense(units=4096,activation="relu"))
+		model.add(Dense(units=1, activation="softmax"))
+	\end{lstlisting}
+	
+	\begin{figure}[H]
+		\centering
+		\label{bigM1Squema}
+		\includegraphics[scale=0.50]{img/esquemaPequenoM1.png}
+		\caption{Effects of different learning rates on the learning process of a model. \cite{learningRates}}
+	\end{figure}
+	
+	Right after implementing the model there are several hyper parameters that need to be tuned so that the model can be compiled and trained, this are often selected by trial and error as well as the previous experience of the person in charge of the implementation of the NN. It was at this point in time, when I was going to start trying several configurations for the hyper parameters that the fist problem arose, \hyperref[sec:explodingGradientProblem]{\textbf{The Exploding Gradient Problem}}.
+	
+	After solving the issues with the gradient I was finally able to train the network and start establishing the hyperparameters, nonetheless after several trials I started to realize that no there was another issue, this time the algorithm was suffering of overfitting, due to the a problem with the balance og the Data. This issue is further addressed in the subsection of \hyperref[sec:problemUnbalanceData]{\textbf{The Problem With the Balance of the Data}}.
+	
+	As for the hyper parameters selected for the model I will now explain which ones did I choose when considering the first model or binary classification model as it only had two classes, later on I will explain any changes that came through with the second model or the multi class classification model. As for the binary model I chose the following:
+	
+	The Loss: the loss of a training process is a hyperparameter that serves both as information for the developer on the evolution of the training process and also as a keystone of the training process by indicating the algorithm how of its presictions are from the actual values on the training and validation sets, each one of those having their own value. As for what to use in the loss function there are many possible metrics, that keras classifies in three main groups:\cite{kerasDocs}
+	
+	\begin{itemize}
+		\item \textbf{Probabilistic}: which focus on implementing formulas that extract the loss value from the probabilities of the different possible events. For example this would be the formula corresponding to one of the many probabilistic losses known as the binary crossentropy.\cite{binnaryCrossentropy}
+		
+		\[ H_p(q) = -(1/n) \sum y_i * log(p(y_i)) + (1-y_i)*log(1-p(y_i)) \]
+		
+		\item\textbf{Regression}: which focus on utilizing the estimators, mainly the mean error, to provide the loss value for the given predictions. For example the next equation corresponds to the mean square error loss function, which belongs to this group:
+		
+		\[ MSE = 1/n \sum(y - \hat y))^2 \]
+		
+		Where y is the actual value and $\hat y$ its predicted counterpart.
+		
+		
+		\clearpage
+		
+		\item\textbf{Hinge}: which focus on the implementation of a margin or distance from the classification boundary to establish the loss values for the given predictions, this methods are most utilized for "maximum-margin" classification mainly in Support Vector Machines (SVMs). One example of a hinge loss formula would be:
+		
+		\[ l(y) = max(0,1 - t * y)\]
+		
+	\end{itemize}
+
+	According to the previous explanation for the loss I tried with both the binary and categorical crossentopries, but the categorical did not seem to be adequate for this problem mainly due to the fact that in the bigger models in tended to 0 way too fast. Anyway that makes sense as in a binary classification problem such as ours it is most often recommended to utilize the binary cross entropy while the categorical one is left for use in multi class classification problems.
+	
+	The optimizer: there are several optimizers provided by the keras api that we could implement in our project, nonetheless the two most comonly used ones are the RMSprop and the Adam optimizers.
+	
+	There is a problem that all optimizers need to face, that been the fact that gradients may vary big magnitudes during the training if the network. This implies that for really small gradients the algorithm learning rate becomes awfully slow and for the biggest ones it could lead to an impossibility of learning for the algorithm due to it taking steps to big to archive the optimal solution.
+	
+	\begin{figure}[H]
+		\centering
+		\label{learningRates}
+		\includegraphics[scale=0.3]{img/learningRates.png}
+		\caption{Effects of different learning rates on the learning process of a model. \cite{learningRates}}
+	\end{figure}
+	
+	
+	\begin{itemize}
+		\clearpage
+		\item \textbf{RMSprop}: focuses on dampening the oscillations of the loss function by adjusting the learning rate for the different parameters individually and dynamically according to the root mean square of the component of the gradient relative to the parameter that is been adjusted. This optimizer implements the following formulas for each parameter named $w^j$, where the super index j has been eliminated to help with readability: \cite{RMSprop}
+		
+		
+		\[v_t = pv_{t - 1} + (1-p)*(g_t)^2\]
+		
+		\[ \Delta w_t = - (n/\sqrt{v_t + \epsilon})*g_t\]
+		
+		\[ w_{t+1} = w_t + \Delta w_t\]
+		With:
+		
+		n: Initial learning Rate
+		
+		$v_t$: Exponential Average of squares of gradients
+		
+		$g_t$: Gradient at time t along $w^j$ 
+		
+		p, $\epsilon$: Hyperparameters generally chosen to be 0.9 and 1e-10 respectively.
+		
+			\vspace{5mm}
+			
+		\item \textbf{Adam}: this heuristic combines properties of the previously described RMSprop and the Momentum approach to learning optimization, which focuses on accelerating the search in the direction of the minima rather than on preventing the oscillations like RMSprop. This method implements the following equations for each parameter named $w^j$, where the super index j has been eliminated to help with readability:
+		
+		\[v_t = \beta_1 * v_{t-1} - (1- \beta_1) * g_t \]
+		
+		\[s_t = \beta_2 * s_{t-1} - (1- \beta_2) * (g_t)^2 \]
+		
+		\[ \Delta w_t = - n( v_t/\sqrt{s_t + \epsilon})*g_t\]
+		
+		\[ w_{t+1} = w_t + \Delta w_t\]
+		
+		With:
+		
+		n: Initial learning Rate
+		
+		$g_t$: Gradient at time t along $w^j$
+		
+		$v_t$: Exponential Average of gradients along $w^j$
+		
+		$s_t$: Exponential Average of squares of gradients along $w^j$
+		
+		$\beta_1,\beta_2, \epsilon$: Hyperparameters generally chosen to be 0.9, 0.99 and 1e-10 respectively.
+		
+	\end{itemize}
+
+	After making several trials with both models I did not see a great impact in using any of them for the optimizer of the model and so I chose Adam as it is becoming more popular as of late and it theatrically possesses the qualities of RMSprop and adds to them the benefits of momentum.
+	 	
+	 When facing the problem of the overfitting of the model that i attributed to the quality and quantity of the data ans is further developed in the \hyperref[sec:problemUnbalanceData]{\textbf{The Problem With the Balance of the Data}} section, I also tried adding regularization to the model as a way of fighting against the overfitting.
+	 
+	 Regularization techniques work by fitting the function of the given layer to the training set. In my case I tried applying regularization to the kernel, bias and activity of the dense layers of the model of both types, L1 and L2, but it did not have any significant impact on the outcomes of the training process of the model. The two models implement the following equations:\cite{regularization}
+	 
+	 
+	 \[L1 = \sum{(Y_i - \sum{X_{ij}\beta_j})^2 + \lambda \sum{|\beta_j|}} \]
+	 
+	 \[L2 = \sum{(Y_i - \sum{X_{ij}\beta_j})^2 + \lambda \sum{{\beta_j}^2}} \]
+	 
 	
 	\clearpage
 	
-	\subsection{Problems with the algorithm}
-	\label{sec:ProblemsWithAlgorithm}
+	\subsection{The Exploding Gradient Problem.}
+	\label{explodingGradientProblem}
 	
-	In Machine Learning this is called overfitting: it means that the model performs well on the training data, but it does not generalize well.
+	This problem and its counterpart the Vanishing gradient problem happens due to the shape of some of the activation functions often implemented, such as the Sigmoid function. 
 	
-	Overfitting happens when the model is too complex relative to the amount and noisiness of the training data. Here are possible solutions:
+	\vspace{5mm}
 	
-	*Simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), by reducing the number of attributes in the training data, or by constraining the model. (regularization)
+	\begin{figure}[H]
+		\label{SigmoidAndDerivative}
+		\includegraphics{img/plots/Sigmoid.png}
+		\caption{Sigmoid function and it´s derivative. \cite{Vanishing}}
+	\end{figure}
+
+	\vspace{5mm}
 	
-	Gather more training data.
+	As it can be appreciated in the chart this function saturates when fed with larger inputs (both negative and positive). This causes that, in some scenarios such as ours, as the back propagation function propagates through the different layers the gradient gets bigger each time to the point where it causes very large updates of the weights and thus makes the gradient descent diverge. This when applied to computing can be detected by some weights becoming incredibly high numbers or even NaN which on time causes an exception as we can see in the logs presented. The other problem that could occur is the aforementioned Vanishing gradient problem, but this is often related to an stall in the training of the NN by the weights becoming too small and so due to the percepted effects of the problematic it seems more plausible for it to be caused by Exploding Gradient instead.
 	
-	Reduce the noise in the training data (e.g., fix data errors and remove outliers).
+	Other posible explanations for the apparition of this problem are the initial weights causing a big loss and the network been way too big for the problem at hand, in any case there are several methods to prevent the negative effects this problem carries to the model and those are:\cite{Vanishing}
 	
-	*The amount of regularization to apply during learning can be controlled by a hyperparameter. A hyperparameter is a parameter of a learning algorithm (not of the model). As such, it is not affected by the learning algorithm itself; it must be set prior to training and remains constant during training. If you set the regularization hyperparameter to a very large value, you will get an almost flat model (a slope close to zero); the learning algorithm will almost certainly not overfit the training data, but it will be less likely to find a good solution. Tuning hyperparameters is an important part of building a Machine Learning system (you will see a detailed example in the next chapter).
 	
-	As you might guess, underfitting is the opposite of overfitting: it occurs when your model is too simple to learn the underlying structure of the data.
+	\begin{itemize}
+		
+		\item Setting the kernel\_initializer, the function implemented for the initial weight generation, to use the Glorot inicialization, named after its author, which works with the variance of the gradients that come in and out of a layer as well as the variances of every layer´s inputs and outputs to try to make them as close to each other as possible.
+		
+		\item To normalize the output of each layer before imputing it to the next one, by adding several BatchNormalization keras´s layers between the different layers of the model.
+		afortunadamente
+		\item To clip the gradients during the backpropagation algorithm so that it can not exceed a threshols that is stablishes as a hyperparameter by adding the clipnorm parameter to the optimizer.
+		
+	\end{itemize}
+
+	I tried implementing the previously mentioned techniques but only the clipping of the gradient had the desired effects by preventing it from Exploding. Nonetheless I suspect that clipping the gradient might have negative effects later on in the process and 
+	fortunately In my trial and error process for solving the Exploding Gradient process I also realized that this problem can be solved by diminishing the size of the neuronal network. Taking in count my suspicions I decided to carry the application process with both, the clipped version of the original NN and the smaller version which has the following code:
 	
-	Select a more powerful model, with more parameters.
-	Feed better features to the learning algorithm (feature engineering).
-	Reduce the constraints on the model (e.g., reduce the regularization hyperparameter).
+		
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model = Sequential() 
+		model.add(Conv1D(input_shape=TRAIN_ARRAY.shape[1:],filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(Conv1D(filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2),padding="same"))
+		model.add(Flatten())
+		model.add(Dense(units=400,activation="relu", kernel_regularizer='l2'))
+		model.add(Dense(units=400,activation="relu", kernel_regularizer='l2'))
+		model.add(Dense( units=1, activation= "softmax"))
+	\end{lstlisting}
+	
+	\vspace{5mm}
+	
+	It is also relevant to say that at this point in time both archived the same results as both were equally affected by the next problem that will be addressed, but I keep them to analyze any changes in their performance that could lead to a model surpassing the other after the several problems are solved.
+	
+	In the following section, The Problem With the Balance of the Data, I will continue with the overffiting problem that arose due to the unbalance of the data.
 	
 	\clearpage
 	
-	\subsection{Problems with the data}
+	\subsection{The Problem With the Balance of the Data}
+	\label{problemUnbalanceData}
 	
-	Insufficient Quantity of Training Data.
+	Most often machine learning algorithms do not handle biased data very well, as most expect a normal distribution of the samples utilized on the training process. Nonetheless there are cases where using balanced data for the training is found to be impossible, in those instances we can have several problems with the model.
 	
-	Even for very simple problems you typically need thousands of examples, and for complex problems such as image or speech recognition you may need millions of examples.
+	When the model performs well on the training data, but it does not generalize well, it is said to be overfitting, in our case although the performance of both models seems to be relatively good when generalizing, with both the accuracy and binary accuracy of the two model going from 0.8193 on the training set to 0.9189 on the validation one, when checking the confusion matrix for the model we can clearly see the issue. Overfitting happens when the model is too complex relative to the amount and noisiness of the training data and given the disparity on the numbers of the members of the different classes that we posses within our dataset it makes perfect sense for the model to arrive to the conclusion that assuming all to be positive yields rather impressive results specially when implementing the binary cross-entropy as the function of loss for the training of the data.
+		
+		\vspace{15mm}
 	
-	Nonrepresentative Training Data
+	\begin{lstlisting}[language=Python]
+		
+		from sklearn.metrics import ConfusionMatrixDisplay
+		
+		pred = model.predict(TEST_ARRAY)
+		ConfusionMatrixDisplay.from_predictions(pred, TEST_LABELS_ARRAY)
+		plt.show()
+	\end{lstlisting}
+
+	\vspace{5mm}
+
+	\begin{figure}[H]
+		\centering
+		\label{UnbalancedConfusionMatrix}
+		\includegraphics[scale=1.2]{img/plots/matrizDeConfusion.png}
+		\caption{Confusion Matrix for the predictions of the model trained with unbalanced data.}
+	\end{figure}
+	\vspace{5mm}
+
+	As we can see on Figure 9, the model comes to the realization that it is best to always classify the person as positive, this is caused by the unbalances nature of the data where for the training set, and it is the same for validation and test, the number of positives is 195 where as the number of negatives is 43 meaning that around 82\% of the instances within the set are labeled as positive in Parkinson´s Disease.
 	
-	In order to generalize well, it is crucial that your training data be representative of the new cases you want to generalize to. This is true whether you use instance-based learning or model-based learning.
+	\begin{figure}[H]
+		\centering
+		\label{UnbalancedTrainDataSet}
+		\includegraphics{img/plots/unbalancedTrainDataGraph.png}
+		\caption{Label distribution for the unbalanced train data set.}
+	\end{figure}
 	
-	It is crucial to use a training set that is representative of the cases you want to generalize to. This is often harder than it sounds: if the sample is too small, you will have sampling noise (i.e., nonrepresentative data as a result of chance), but even very large samples can be nonrepresentative if the sampling method is flawed. This is called sampling bias.
+	This on time causes a situation of overfitting for which I found two possible solutions.
 	
-	Poor-Quality Data %debería considerarlo ? 
-	Synapse tiene un control de calidad, columna que categoriza el audio en correcto o no 
-	
-	Irrelevant Features
-	As the saying goes: garbage in, garbage out. Your system will only be capable of learning if the training data contains enough relevant features and not too many irrelevant ones. A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process, called feature engineering, involves the following steps:
-	
-	Feature selection (selecting the most useful features to train on among existing features)*
-	
-	Feature extraction (combining existing features to produce a more useful one as we saw earlier, dimensionality reduction algorithms can help)
-	
-	Creating new features by gathering new data
-	
-	*Visualization algorithms are also good examples of unsupervised learning
-	
-	A related task is dimensionality reduction, in which the goal is to simplify the data without losing too much information. One way to do this is to merge several correlated features into one. For example, a car’s mileage may be strongly correlated with its age, so the dimensionality reduction algorithm will merge them into one feature that represents the car’s wear and tear. This is called feature extraction.
+	\begin{itemize}
+		
+		\item Implementing Weighted classes with SkLearn
+		
+		\item Stablishing A clasification System Based on the UPDRS
+		
+	\end{itemize}
 	
 	\clearpage
 	
-	\subsubsection{Balancing The Data Set}
+	\subsubsection{Implementing Weighted classes with SkLearn}
 	
 	
+	Class weights are values given to the different classes that constitute the outcome of the classification algorithm according to their representation within the training set of data. Usually the minority classes will be assigned bigger weights while the majority ones will often have a weight smaller than one. This weights are later fed to tha training algorithm and are used to penalize the misclassification of the elements of the minority classes while also lessening the importance of this same missclasification for the elements that belong to the mayority classes. In this way we can make the algorithm adapt to the skewness proper to the biased distribution.
+	
+	To be more precise when implementing "balanced" class weights, the weights values assigned to each class are inversely proportional to the frecuency og that given class in the data set.\cite{classWeights}
+	
+	\[ wj = n\_samples / (n\_classes * n\_samplesj) \] 
+	
+	According to the previous explanation the idea is to give different weights to the different classes coming out of the classification algorithm, to calculate the corresponding weights, which are based on the training data, there is a function in the utils package from sklearn that will do the job:
+	
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+			
+		from sklearn.utils.class_weight import compute_class_weight
+		import numpy as np
+		
+		res = compute_class_weight(class_weight = 'balanced', classes = np.unique(TRAIN_LABELS), y = TRAIN_LABELS);
+		balanced_dict = dict(zip(np.unique(TRAIN_LABELS), res))
+		print(balanced_dict)
+		
+		>> {0: 2.7674418604651163, 1: 0.6102564102564103}
+	
+	\end{lstlisting}
+
+	\vspace{5mm}
+	
+	As for the application of the classes to the model it is as simple as feeding the balanced\_dict as input value for the  class\_weight parameter within the fit function of the model.
+	
+	Unfortunately this method did not seem to have any mayor effects on any of the models utilizes for this implementation. Al thou according to the the loss of the model, which I established to be de binary\_crossentropy, both models do try to perform better during their training process, both get stuck from the very beginning in the idea that saying that every patient is sick with Parkinson´s disease is the best outcome. It is relevant to acknowledge that while in some problems the accuracy alone could be a good enough metric to stablish the correctness of the algorithm, thus markin ours who has an accuaricy above 80\% as a good system, in our scenario the acuracy alone falls short and the confusion matrix seems to be far more representatice. With this in mind it would seem that this classification approach is a failure and thus I propose a new approach in the following section.
+	
+	As for the reasons behind the failure of out first model those seem yet unclear, although there are several conclusions that could be extracted from the previous process.
+	
+	The first one is that the failure of this model does not depend on its size as two model of similar structure yet very different size where compared. With the objective of finding out if the failure of the fist model was due to its size I even tried with smaller models composed of only dense layers but there where no perceptible signs of change further than an increase in the loss when training the models, which seemed to indicate that the models where getting too small to be able to learn given the dimensionality of the problem.
+	
+	The second option I see would be that the problem is within the data utilized for the training of the dataset, seen how I extensively treated the data to try and make it as clean as possible for its use in the training process of the models I am more inclined to say that the impossibility of this model to learn given the data that we posses was due to the noisiness of the data or its number of samples, that got heavily reduced during the data cleanse and normalization processes. It could have therefore been a good idea to try and reduce the amount of data eliminated in this process or try and recollect or generate new stances that could enlarge the different data sets that take part on the training and evaluation of the model.
+	
+	\clearpage
+	
+	\subsubsection{Stablishing A clasification System Based on the UPDRS}
+	
+	The UPDRS or Unifies Parkinson´s Disease Rating Scale has several measurements that help health experts asses the patient´s mental state, their conduct and mood, as well as the state of their motor functions and their ability to realize every day tasks. This scale if often used to asses the effects of the medication on a patient or establish the degree of development of the disease they are subjected to and the effect it has on their live.
+	
+	In our initial dataset there are several attributes that relate to the UPDRS scale which on time will allow as to establish different groups according to the level of deterioration the sickness has caused the patient, which hopefully will allow as to have better balanced groups over which to train a model.
+	
+	\vspace{5mm}
+	
+	\input{featuresUPDRSTable}
+	
+	\clearpage
+	
+	Although not all the attributes related to the UPDRS scale can be easily related to the audio data the main idea is that the scale gives a rough level of deterioration for the patient, and it can be argued that this deterioration caused bu the sickness is bound to affect the vocal qualities of the patient. This is none the less a hypotesis of mine which is yet to be tested and therefore the model could fail due to this factors not been significantly related.
+	
+	The first step before starting to generate the model would be to create the new function to generate the labels and evaluating the distribution of the data over the new classes to see if this approach seems relevant.
+	
+	As for the criteria of the classes I will be adding the scores for the patient in all the attributes relates to the UPDRS and adapt the boundaries of the classes as needed to help the even distribution of the instances of the data.
+	
+	\vspace{10mm}
+	
+	\begin{figure}[H]
+		\centering
+		\label{UPDRSSumDistribution}
+		\includegraphics{img/plots/UPDRSsum.png}
+		\caption{Distribution for the sum of the different attributes associated to the UPDRS within the data set.}
+	\end{figure}
+	
+	Based on the distribution of the variable just shown in the graph above I adjusted the previous getDataFrameLabels function in order to produce classes with more or less the same number of samples. I also decided to make a group composed of all the individuals who have not been diagnosed with the disease but due to its size I will try both, training the model with this class and removing it, for I think it could have a negative effect in the model.
+	
+	\clearpage
+	
+	\begin{lstlisting}[language=Python]
+		
+		def getDataFrameLabels(data_frame):
+			C0 = [1,0,0,0]
+			C1 = [0,1,0,0]
+			C2 = [0,0,1,0]
+			C3 = [0,0,0,1]
+			data_labels = []
+			data_frame.head()
+			heads = ["memory", "hallucinations", "mood", "motivation", "speech", "saliva", "swallowing", "handwriting","dressing", "cutting_food", "hygiene", "turning_in_bed", "falling", "freezing", "walking", "tremors", "numbness" ]
+			for index, row in data_frame.iterrows():
+			addition = 0
+			for elem in heads:
+				addition = addition + row[elem]
+				if (addition == 0):
+					data_labels.append(C0)
+				elif (addition > 0 and addition <= 10):
+					data_labels.append(C1)
+				elif (addition > 10 and addition <= 17):
+					data_labels.append(C2)
+				else:
+					data_labels.append(C3)
+			return data_labels
+	\end{lstlisting}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\label{UPDRSSumDistributionClasses}
+		\includegraphics[scale=0.95]{img/plots/UPDRSsumClasses.png}
+		\caption{Distribution for the classes created based of sum of the different attributes associated to the UPDRS within the data set.}
+	\end{figure}
+
+	\vspace{10mm}
+	
+	With this new classes we will have a more uniform set of classification options for the model which should make it so that we surpass the problem of the imbalance of the data that stopped our first model. Speaking in percentages the C1 contains 33.19\% of the total samples, C2 contains 33.61\% and C3 contains 32.35\% while C0 contains less than a 1\% of the samples thus been unreasonably unbalanced. I will try to keep it as ideally it would be very interesting for the model to be able to classify non ill people as well as the level of deterioration caused in Parkinson´s patients, but due to the small number of samples we have for this group I doubt this will be possible.
+	
+	First I tried to train a model based on the VGG-16 architecture, with the same structure as the bigger of the two models presented in the previous binary classification approach but changing the number of neurons in the output layer so that it would adapt to the new structure I was aiming for:
+	
+		\vspace{10mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model = Sequential()
+		model.add(Conv1D(input_shape=TRAIN_ARRAY.shape[1:],filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(Conv1D(filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=128, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=128, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=256, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=256, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=256, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=512, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Flatten())
+		model.add(Dense(units=4096,activation="relu"))
+		model.add(Dense(units=4096,activation="relu"))
+		model.add(Dense(units=4, activation="softmax"))
+	\end{lstlisting}
+
+		\vspace{10mm}
+
+	While the model was mostly identical I had to change my selection of the loss function and the metrics, so I decided to utilize the aforementioned categorical\_crossentropy  (in section 4 Implementation of the CNN) as my loss function and for the metrics I implemented the Accuracy and Categorical Accuracy as well as the multiclass confusion matrix that I was able to generate by implementing the confusion\_matrix function from the metrics module in the sklearn library:
+	
+		\clearpage
+	
+	\begin{lstlisting}[language=Python]
+		
+		from sklearn import metrics
+		preds = model.predict(TEST_ARRAY)
+		matrix = metrics.confusion_matrix(TEST_LABELS_ARRAY.argmax(axis=1),
+		preds.argmax(axis=1))
+		matrix
+		
+		>> array([[12,  0,  7],
+				  [ 5,  0, 12],
+				  [ 8,  0, 15]], dtype=int64)
+				  
+	 \end{lstlisting}
+ 
+		\vspace{10mm}	
+		
+	The previous example of the implementation of the confusion\_matrix function was done over the test data set and having merged the C0 class with the C1.
+	
+	The problem with this first model was that it overfitted the training set, while I could have tried to solve that with any of the means presented in section 4.2 I first decided to try with and adaptation of the smaller model implemented in the previous binary classification approach and after some fine tuning this new model yielded better results.
+	
+		\clearpage
+	
+	\begin{lstlisting}[language=Python]
+		
+		model = Sequential() 
+		model.add(Dropout(.2, input_shape=TRAIN_ARRAY.shape[1:]))
+		model.add(Conv1D(filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(Conv1D(filters=64,kernel_size=(3),padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2),padding="same"))
+		model.add(Conv1D(filters=128, kernel_size=(3), padding="same", activation="relu"))
+		model.add(Conv1D(filters=128, kernel_size=(3), padding="same", activation="relu"))
+		model.add(MaxPool1D(pool_size=(2),strides=(2)))
+		model.add(Flatten())
+		model.add(Dense(units=700,activation="relu"))
+		model.add(Dense(units=700,activation="relu"))
+		model.add(Dense( units=4, activation= "softmax"))
+		
+	\end{lstlisting}
+	
+	\vspace{10mm}
+	
+	At the beginning the model was of the same size that the one presented as the second model in the binary classification section. This first attempt on the model stagnated on around a 30\% crossentropy Accuracy for all train validation and test, in order to solve this stagnation of the learning process I tried changing several hyperparameters and ended up with the model you see above but without any regularization or dropout.
+	
+	This is an example of overfitting caused by the previous model with no regularization or dropout.
+	
+		\vspace{5mm}
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TRAIN_ARRAY, TRAIN_LABELS_ARRAY)
+		
+		>> 8/8 [==============================] - 0s 6ms/step - loss: 3.5593e-05 - categorical_accuracy: 1.0000 - accuracy: 0.0914
+	\end{lstlisting}
+
+	\clearpage
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(VALIDATION_ARRAY, VALIDATION_LABELS_ARRAY)
+		
+		>> 3/3 [==============================] - 0s 5ms/step - loss: 9.1578 - categorical_accuracy: 0.4189 - accuracy: 0.0405
+	\end{lstlisting}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TEST_ARRAY, TEST_LABELS_ARRAY)
+		
+		>> 2/2 [==============================] - 0s 6ms/step - loss: 37.8091 - categorical_accuracy: 0.3051 - accuracy: 0.0381
+	\end{lstlisting}
+		\vspace{5mm}
+	
+	As this newer and bigger model ended up overfitting the training dataset I proceeded to try implementing both a Dropout layer and L2 regularization in the Dense layers, in the end what yielded better results was leaving the Dropout layer without any kind of regularization.
+	
+	At this point I decided to implement the ModelCheckpoint class from keras library that allows as to save and load the "best" epoch of the training process instead of the last one. In our case the epoch considered to be the best would be the one with the lowest loss on its validation set as choosing the one with the highest validation crossentropy accuracy seemed to yield good results for train and test but significantly worse in the test dataset.
+	
+	This is an example of the performance of the model with the dropout layer included and the validation crossentropy accuracy as indicator of the quality of the epoch.
+	
+		\vspace{5mm}
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TRAIN_ARRAY, TRAIN_LABELS_ARRAY)
+		
+		>> 8/8 [==============================] - 0s 6ms/step - loss: 0.9080 - categorical_accuracy: 0.5252 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\clearpage
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(VALIDATION_ARRAY, VALIDATION_LABELS_ARRAY)
+		
+		>> 3/3 [==============================] - 0s 5ms/step - loss: 1.1463 - categorical_accuracy: 0.5541 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TEST_ARRAY, TEST_LABELS_ARRAY)
+		
+		>> 2/2 [==============================] - 0s 7ms/step - loss: 2.1517 - categorical_accuracy: 0.3390 - accuracy: 0.0085
+	\end{lstlisting}
+	\vspace{5mm}
+	
+	This is an example of the performance of the model with the dropout layer included and the validation loss as indicator of the quality of the epoch.
+	
+	\vspace{5mm}
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TRAIN_ARRAY, TRAIN_LABELS_ARRAY)
+		
+		>> 8/8 [==============================] - 0s 6ms/step - loss: 1.0641 - categorical_accuracy: 0.3992 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(VALIDATION_ARRAY, VALIDATION_LABELS_ARRAY)
+		
+		>> 3/3 [==============================] - 0s 5ms/step - loss: 1.0902 - categorical_accuracy: 0.3378 - accuracy: 0.0000e+00
+	\end{lstlisting}
+
+	\vspace{5mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TEST_ARRAY, TEST_LABELS_ARRAY)
+		
+		>> 2/2 [==============================] - 0s 6ms/step - loss: 1.9819 - categorical_accuracy: 0.3390 - accuracy: 0.0085
+	\end{lstlisting}
+	
+	\vspace{5mm}
+	
+	Ir order to evaluate the impact of several of the techniques applied to the data as well as the fact that many instances where eliminated during the data cleaning process I decided to do some final trials:
+	
+	First I decided to not normalize the data to see haw the normalization affects the learning process of the network.
+	
+	\vspace{5mm}
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TRAIN_ARRAY, TRAIN_LABELS_ARRAY)
+		
+		>> 8/8 [==============================] - 0s 6ms/step - loss: 1.0161 - categorical_accuracy: 0.4790 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{7mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(VALIDATION_ARRAY, VALIDATION_LABELS_ARRAY)
+		
+		>> 3/3 [==============================] - 0s 5ms/step - loss: 1.0381 - categorical_accuracy: 0.4459 - accuracy: 0.0034
+	\end{lstlisting}
+	
+	\vspace{7mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TEST_ARRAY, TEST_LABELS_ARRAY)
+		
+		>> 2/2 [==============================] - 0s 7ms/step - loss: 1.1821 - categorical_accuracy: 0.3390 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{5mm}
+	
+	And finally I decided to give default values to the NaN and Null cells of the dataset to see the impact that the decrement in the number of instances for the data sets might have caused. We must not forget that by giving default values to this attributes I am also adding noise to the dataset and that could end up causing travel as well. For this experiment I normalized the data although I did try with all the data and without normalization, it did not make a difference.
+	
+	\clearpage
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TRAIN_ARRAY, TRAIN_LABELS_ARRAY)
+		
+		>> 15/15 [==============================] - 0s 6ms/step - loss: 0.8312 - categorical_accuracy: 0.6717 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{7mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(VALIDATION_ARRAY, VALIDATION_LABELS_ARRAY)
+		
+		>> 5/5 [==============================] - 0s 6ms/step - loss: 0.8420 - categorical_accuracy: 0.6783 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{7mm}
+	
+	\begin{lstlisting}[language=Python]
+		
+		model.evaluate(TEST_ARRAY, TEST_LABELS_ARRAY)
+		
+		>> 4/4 [==============================] - 0s 6ms/step - loss: 0.8810 - categorical_accuracy: 0.6579 - accuracy: 0.0000e+00
+	\end{lstlisting}
+	
+	\vspace{5mm}
 	
 	\clearpage
 	
 	\section{Conclusions}
 	
+	While I had my reasons for doing so, given the limited data at my disposal I would say that my data cleaning process was too harsh. The problem with allowing data of doubtful quality to stay in the dataset is that it could create noise or even make the Neural Network find patterns that are false, given that the data is actually wrong, and therefore it is risky. This could on time have a massive negative impact in the training process and future predictions of the model.
+	
+	I would say that the implementation of the binary classification model failed mainly due to the lack of samples without the disease, problem that might have been related to the cleaning process. If I were to leave all instances the difference between classes would have been of 5.546 to 1 people having Parkinson´s Disease in the entirety of the data, which while already unbalanced had significantly more samples of the healthy group.
+	
+	This claim is further supported by the lack of results yielded by the different methodologies applied to try and solve the issue and the fact that even for the second model the best results obtained are those from the trial without dropping any undefined values.
+	
+	As per the second take with the multiclass classification model the more uniform distribution of samples over the different output classes allowed for a model that could yield some results. Nonetheless those results ended up not been too promising.
+	
+	\vspace{10mm}
+	
+	\begin{table}[h]
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\begin{tabular}{cccc}
+				\hline
+				Case & Train Categorical Accuracy & Validation Categorical Accuracy & Test Categorical Accuracy \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Second multiclass model\\  with no regularization\end{tabular} & 1.0000 & 0.4189 & 0.3051 \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Second multiclass model with \\ Dropout and checkpoint based on \\ Categorical Accuracy\end{tabular} & 0.5252 & 0.5541 & 0.3390 \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Second multiclass model with\\  Dropout and checkppoint \\ based on Loss function\end{tabular} & 0.3992 & 0.3378 & 0.3390 \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Second model with \\ unormalized data\end{tabular} & 0.4790 & 0.4459 & 0.3390 \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Second model with \\ undetermined values\end{tabular} & 0.6717 & 0.6783 & 0.6579 \\ \hline
+			\end{tabular}%
+		}
+		\caption{Table with all the results for the trials that have been done over the second model of the multiclass clasification approach.}
+		\label{MulticlassSecondModelResultTable}
+	\end{table}
+	
+	\vspace{10mm}
+	
+	In the end I merged C0 (the class that contained all instances with 0 on every aspect of the UPDRS and therefore healthy) with C1 (the class containing the instances of the data with the lowest range for the sum of the values of the different UPDRS related attributes), due to the low representation of the C0 class, that would make it really hard or even impossible for the network to establish patterns, and the fact that there were no instances of C0 on the test dataset.
+	
+	Seen how all the different trials yielded very similar results for their Test metrics except for the final one, that included the rows with one or more undefined values on them, which actually doubled the other trials test categorical accuracy, I would say that the main reason for the model to get stagnated soon on the learning process was the lack of data that made it impossible for the model to learn the patters within. As we can see this lack of data not only improves the generalization capabilities of the model but añso its learning abilities as the validation and train metrics where the highest and second highest from all trials respectively (including the overfitting ones).
+	
+	
+	
 	\clearpage
 	
 	\subsection{Possible Future Work Lines}
 	
-	Yet another important unsupervised task is anomaly detection—for example, detecting unusual credit card transactions to prevent fraud, catching manufacturing defects, or automatically removing outliers from a dataset before feeding it to another learning algorithm. The system is shown mostly normal instances during training, so it learns to recognize them; then, when it sees a new instance, it can tell whether it looks like a normal one or whether it is likely an anomaly
+	One of the main problems faces in this paper was the availability of trust worthy data, this on time could lead to two possible lines of work that would significantly improve future Machine Learning implementations over smaller datasets such as the one utilized in this paper.
+	
+	\begin{itemize}
+		\item Anomaly detection would allow for a better filter of the data, helping identify any instances that need to be removed due to their nature. one of the approaches could be based on unsupervised learning and it works by showing the system mostly normal instances during training, so it learns to recognize them. Later when it comes across a new instance, it should be able to tell whether it is a normal or an anomaly. This could help in cases such as mine where too many instances of the data where taken out during the cleaning process to prevent risks by more accurately marking those that could have a negative effect on the system.
+		
+		\item Generation of new instances could also be an option and this path has the advantage of allowing projects that start with rather small quantities of data to increase the size of their data frames. In this case I suggest looking into the possibility of implementing GAN (Generative Adversarial Networks) which are becoming more and more popular and could yield interesting results.
+		
+	\end{itemize}
+	
+	Finally I can think of one last way of further developing this project and that would be to try and implement different types of Machine Learning Algorithms, in the case of CNN they do take in count the physical proximity of the features within the input to the model and the relation between the attributes that I positioned together might have been too weak, which on time could have hindered the learning of the model. On this bases I think it might be a good idea to investigate the possibility of implementing other ML systems but I will also suggest to focus on Deep Learning as from my knowledge of the problem it seems quite complex.
 	
 	\clearpage
 	
 	\subsection{Social Implications}
 	
+	This End Grade Project is focused on research and therefore iy is hard to argue any direct implications it might have on society. As for the possibility of the outcomes of this project to be implemented in any kind of consumer directed software I would argue that the idea of implementing a system for recognition and diagnosis of Parkinson´s disease through voice recordings that could be generated with a mobile phone could help in the early detection and treatment of Parkinson´s disease, therefore helping people affected by this malady to be recognized sooner and posses an alternative way of assessing the development of the sickness that could ease the number of visits to medics and/or hospitals that this patients require in order to follow up on the development of their sickness. This would ultimately improve their quality of live and help to recognize sooner possible cases as well as easing the development assessment process of the disease.
+	
+	Unfortunately the outcomes of this paper have not been good enough so that I would suggest implementing any of the models discussed within this pages in any kind of consumer bases application. This paper none the less proves the bases that a categorization Machine Learning based system might be possible using the parametrization of voice recording and some general data (such as age and gender) given that enough data is provided for the training and evaluation of the model.
 	
 	\clearpage
 	

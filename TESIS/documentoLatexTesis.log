@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.29)  19 MAY 2022 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.29)  14 JUN 2022 02:04
 entering extended mode
 **./documentoLatexTesis.tex
 (documentoLatexTesis.tex
@@ -385,24 +385,24 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 (documentoLatexTesis.aux (portadaTesis.aux))
 \openout1 = `documentoLatexTesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 \c@lstlisting=\count295
 
 (D:\Nueva carpeta\tex/context/base/mkii\supp-pdf.mkii
@@ -434,15 +434,15 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.2698pt, 452.96826pt, 72.2698pt)
-* v-part:(T,H,B)=(72.2698pt, 700.50723pt, 72.2698pt)
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=452.96826pt
-* \textheight=700.50723pt
-* \oddsidemargin=-0.00018pt
-* \evensidemargin=-0.00018pt
-* \topmargin=-37.00018pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -460,7 +460,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 52.
+Package hyperref Info: Link coloring OFF on input line 53.
 (D:\Nueva carpeta\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -472,9 +472,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count302
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
 
 (documentoLatexTesis.out) (documentoLatexTesis.out)
 \@outlinefile=\write3
@@ -483,7 +483,7 @@ LaTeX Info: Redefining \nameref on input line 52.
 \openout2 = `portadaTesis.aux'.
 
  (portadaTesis.tex
-<img/insigneaUPM.jpg, id=83, 260.975pt x 284.06125pt>
+<img/insigneaUPM.jpg, id=87, 260.975pt x 284.06125pt>
 File: img/insigneaUPM.jpg Graphic file (type jpg)
 <use img/insigneaUPM.jpg>
 Package pdftex.def Info: img/insigneaUPM.jpg  used on input line 9.
@@ -496,7 +496,7 @@ PM.jpg>])pdfTeX warning (ext4): destination with the same identifier (name{page
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.64 	\clearpage
+l.65 	\clearpage
                  [1
 
 
@@ -532,147 +532,480 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [10
 
 ] [11]
-<img/convLayer.png, id=201, 346.59488pt x 206.87288pt>
+<img/convLayer.png, id=206, 346.59488pt x 206.87288pt>
 File: img/convLayer.png Graphic file (type png)
 <use img/convLayer.png>
-Package pdftex.def Info: img/convLayer.png  used on input line 279.
+Package pdftex.def Info: img/convLayer.png  used on input line 282.
 (pdftex.def)             Requested size: 181.1453pt x 108.12047pt.
  [12
 
- <./img/convLayer.png (PNG copy)>]
-<img/maxPoolingLayer.png, id=221, 347.1369pt x 144.7809pt>
+]
+<img/maxPoolingLayer.png, id=225, 347.1369pt x 144.7809pt>
 File: img/maxPoolingLayer.png Graphic file (type png)
 <use img/maxPoolingLayer.png>
-Package pdftex.def Info: img/maxPoolingLayer.png  used on input line 290.
+Package pdftex.def Info: img/maxPoolingLayer.png  used on input line 293.
 (pdftex.def)             Requested size: 347.13605pt x 144.78053pt.
-<img/vgg-neural-network-architecture.jpg, id=224, 471.7625pt x 277.035pt>
+<img/vgg-neural-network-architecture.jpg, id=228, 471.7625pt x 277.035pt>
 File: img/vgg-neural-network-architecture.jpg Graphic file (type jpg)
 <use img/vgg-neural-network-architecture.jpg>
 Package pdftex.def Info: img/vgg-neural-network-architecture.jpg  used on input
- line 299.
-(pdftex.def)             Requested size: 426.79134pt x 250.63116pt.
- [13 <./img/maxPoolingLayer.png (PNG copy)> <./img/vgg-neural-network-architect
-ure.jpg>] [14] [15
+ line 302.
+(pdftex.def)             Requested size: 398.33858pt x 233.92102pt.
+ [13 <./img/convLayer.png (PNG copy)> <./img/maxPoolingLayer.png (PNG copy)>] [
+14 <./img/vgg-neural-network-architecture.jpg>]
+(featuresTable.tex
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-]
-(D:\Nueva carpeta\tex/latex/listings\lstlang1.sty
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.27 \end{tabularx}
+                   
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (11.74988pt too wide) in paragraph at lines 27--28
+[][] 
+ []
+
+
+Overfull \hbox (11.74988pt too wide) in paragraph at lines 52--53
+[][] 
+ []
+
+) [15
+
+] [16] (D:\Nueva carpeta\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-<img/VoiceCodeBefore.png, id=244, 385.44pt x 43.66313pt>
+<img/VoiceCodeBefore.png, id=251, 385.44pt x 43.66313pt>
 File: img/VoiceCodeBefore.png Graphic file (type png)
 <use img/VoiceCodeBefore.png>
-Package pdftex.def Info: img/VoiceCodeBefore.png  used on input line 354.
+Package pdftex.def Info: img/VoiceCodeBefore.png  used on input line 357.
 (pdftex.def)             Requested size: 385.43906pt x 43.66301pt.
- [16
+ [17
 
- <./img/VoiceCodeBefore.png>] [17]
-<img/plots/feature02N.png, id=289, 376.40625pt x 248.93pt>
+ <./img/VoiceCodeBefore.png>] [18]
+<img/plots/feature02N.png, id=297, 376.40625pt x 248.93pt>
 File: img/plots/feature02N.png Graphic file (type png)
 <use img/plots/feature02N.png>
-Package pdftex.def Info: img/plots/feature02N.png  used on input line 409.
+Package pdftex.def Info: img/plots/feature02N.png  used on input line 412.
 (pdftex.def)             Requested size: 376.40532pt x 248.92938pt.
-<img/plots/feature24N.png, id=290, 376.40625pt x 248.93pt>
+ [19
+
+ <./img/plots/feature02N.png>]
+<img/plots/feature24N.png, id=306, 376.40625pt x 248.93pt>
 File: img/plots/feature24N.png Graphic file (type png)
 <use img/plots/feature24N.png>
-Package pdftex.def Info: img/plots/feature24N.png  used on input line 417.
+Package pdftex.def Info: img/plots/feature24N.png  used on input line 420.
 (pdftex.def)             Requested size: 376.40532pt x 248.92938pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<img/plots/feature24NClip.png, id=291, 369.38pt x 248.93pt>
+<img/plots/feature24NClip.png, id=307, 369.38pt x 248.93pt>
 File: img/plots/feature24NClip.png Graphic file (type png)
 <use img/plots/feature24NClip.png>
-Package pdftex.def Info: img/plots/feature24NClip.png  used on input line 425.
+Package pdftex.def Info: img/plots/feature24NClip.png  used on input line 428.
 (pdftex.def)             Requested size: 369.37909pt x 248.92938pt.
-[18
-
- <./img/plots/feature02N.png>] [19 <./img/plots/feature24N.png> <./img/plots/fe
-ature24NClip.png>]
-<img/plots/feature03N.png, id=312, 376.40625pt x 248.93pt>
+ [20 <./img/plots/feature24N.png> <./img/plots/feature24NClip.png>]
+<img/plots/feature03N.png, id=319, 376.40625pt x 248.93pt>
 File: img/plots/feature03N.png Graphic file (type png)
 <use img/plots/feature03N.png>
-Package pdftex.def Info: img/plots/feature03N.png  used on input line 459.
-(pdftex.def)             Requested size: 146.28093pt x 96.73936pt.
-<img/plots/feature03NStandard.png, id=313, 397.485pt x 248.93pt>
+Package pdftex.def Info: img/plots/feature03N.png  used on input line 462.
+(pdftex.def)             Requested size: 137.67717pt x 91.04881pt.
+<img/plots/feature03NStandard.png, id=320, 397.485pt x 248.93pt>
 File: img/plots/feature03NStandard.png Graphic file (type png)
 <use img/plots/feature03NStandard.png>
 Package pdftex.def Info: img/plots/feature03NStandard.png  used on input line 4
-60.
-(pdftex.def)             Requested size: 154.47266pt x 96.73936pt.
-<img/plots/feature03NRobust.png, id=314, 376.40625pt x 248.93pt>
+63.
+(pdftex.def)             Requested size: 145.3871pt x 91.04881pt.
+<img/plots/feature03NRobust.png, id=321, 376.40625pt x 248.93pt>
 File: img/plots/feature03NRobust.png Graphic file (type png)
 <use img/plots/feature03NRobust.png>
-Package pdftex.def Info: img/plots/feature03NRobust.png  used on input line 461
+Package pdftex.def Info: img/plots/feature03NRobust.png  used on input line 464
 .
-(pdftex.def)             Requested size: 146.28093pt x 96.73936pt.
- [20 <./img/plots/feature03N.png> <./img/plots/feature03NStandard.png> <./img/p
-lots/feature03NRobust.png>] [21] [22
+(pdftex.def)             Requested size: 137.67717pt x 91.04881pt.
+ [21] [22 <./img/plots/feature03N.png> <./img/plots/feature03NStandard.png> <./
+img/plots/feature03NRobust.png>]
+[23
 
-] [23] [24
+] [24] [25
 
-] [25
+] [26
 
 ]
-[26
-
-] [27
-
-] [28
-
-] [29
-
-] [30
-
-] [31
-
-] (documentoLatexTesis.bbl
-Underfull \hbox (badness 4819) in paragraph at lines 101--104
-[]\OT1/cmr/m/n/12 J. Hale, ``Scale, Stan-dard-ize, or Nor-mal-ize with Scikit-L
-earn,'' []$https : / /
- []
+<img/esquemaPequenoM1.png, id=423, 482.80376pt x 851.18pt>
+File: img/esquemaPequenoM1.png Graphic file (type png)
+<use img/esquemaPequenoM1.png>
+Package pdftex.def Info: img/esquemaPequenoM1.png  used on input line 592.
+(pdftex.def)             Requested size: 241.40129pt x 425.58894pt.
 
 
-Overfull \hbox (30.97119pt too wide) in paragraph at lines 101--104
-\OT1/cmr/m/n/12 towardsdatascience . com / scale-[]standardize-[]or-[]normalize
--[]with-[]scikit-[]learn-[]6ccc7d176a02# :
- []
+LaTeX Warning: Hyper reference `sec:explodingGradientProblem' on page 27 undefi
+ned on input line 596.
 
+[27 <./img/esquemaPequenoM1.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
-[] \OT1/cmr/m/n/12 : text = types % 20of % 20scales-[] ,[] RobustScaler ,[] val
-ue % 20 % E2 % 80 % 94 % 2025 % 25 %
+LaTeX Warning: Hyper reference `sec:problemUnbalanceData' on page 28 undefined 
+on input line 598.
+
+[28]
+<img/learningRates.png, id=452, 1027.84pt x 770.88pt>
+File: img/learningRates.png Graphic file (type png)
+<use img/learningRates.png>
+Package pdftex.def Info: img/learningRates.png  used on input line 633.
+(pdftex.def)             Requested size: 308.35437pt x 231.26578pt.
+ [29
+
+ <./img/learningRates.png>] [30
+
+]
+
+LaTeX Warning: Hyper reference `sec:problemUnbalanceData' on page 31 undefined 
+on input line 686.
+
+[31]
+<img/plots/Sigmoid.png, id=475, 462.528pt x 346.896pt>
+File: img/plots/Sigmoid.png Graphic file (type png)
+<use img/plots/Sigmoid.png>
+Package pdftex.def Info: img/plots/Sigmoid.png  used on input line 707.
+(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
+
+Overfull \hbox (35.7355pt too wide) in paragraph at lines 707--708
+[][] 
  []
 
 [32
 
-]) [33] (documentoLatexTesis.aux (portadaTesis.aux))
+ <./img/plots/Sigmoid.png>] [33] [34]
+<img/plots/matrizDeConfusion.png, id=504, 246.1697pt x 201.75375pt>
+File: img/plots/matrizDeConfusion.png Graphic file (type png)
+<use img/plots/matrizDeConfusion.png>
+Package pdftex.def Info: img/plots/matrizDeConfusion.png  used on input line 77
+7.
+(pdftex.def)             Requested size: 295.40215pt x 242.10327pt.
+ [35
+
+]
+<img/plots/unbalancedTrainDataGraph.png, id=517, 390.45876pt x 262.9825pt>
+File: img/plots/unbalancedTrainDataGraph.png Graphic file (type png)
+<use img/plots/unbalancedTrainDataGraph.png>
+Package pdftex.def Info: img/plots/unbalancedTrainDataGraph.png  used on input 
+line 787.
+(pdftex.def)             Requested size: 390.4578pt x 262.98184pt.
+ [36 <./img/plots/matrizDeConfusion.png>] [37 <./img/plots/unbalancedTrainDataG
+raph.png>] [38
+
+] [39]
+(featuresUPDRSTable.tex)
+Overfull \hbox (11.74988pt too wide) in paragraph at lines 43--852
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--852
+
+ []
+
+[40
+
+]
+<img/plots/UPDRSsum.png, id=557, 394.47375pt x 262.9825pt>
+File: img/plots/UPDRSsum.png Graphic file (type png)
+<use img/plots/UPDRSsum.png>
+Package pdftex.def Info: img/plots/UPDRSsum.png  used on input line 866.
+(pdftex.def)             Requested size: 394.47278pt x 262.98184pt.
+ [41
+
+ <./img/plots/UPDRSsum.png>]
+<img/plots/UPDRSsumClasses.png, id=564, 383.4325pt x 262.9825pt>
+File: img/plots/UPDRSsumClasses.png Graphic file (type png)
+<use img/plots/UPDRSsumClasses.png>
+Package pdftex.def Info: img/plots/UPDRSsumClasses.png  used on input line 903.
+
+(pdftex.def)             Requested size: 364.2588pt x 249.83194pt.
+ [42
+
+] [43 <./img/plots/UPDRSsumClasses.png>]
+Overfull \hbox (10.74252pt too wide) in paragraph at lines 944--945
+\OT1/cmr/m/n/12 tion and the met-rics, so I de-cided to uti-lize the afore-men-
+tioned cat-e-gor-i-cal[]crossentropy
+ []
+
+[44] [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49] [50
+
+] [51
+
+] [52] [53
+
+] [54
+
+] (documentoLatexTesis.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
+[]\OT1/cmr/m/n/12 G. Boesch, ``VGG Very Deep Con-vo-lu-tional Net-works (VG-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
+\OT1/cmr/m/n/12 GNet) - what you need to know,'' []$https : / / viso . ai / dee
+p-[]learning /
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 74--78
+\OT1/cmr/m/n/12 vgg-[]very-[]deep-[]convolutional-[]networks/$[], un-known, [On
+-line; ac-ce-dido 19-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
+[]\OT1/cmr/m/n/12 C. Team, ``Nor-mal-iza-tion,'' []$https : / / www . codecadem
+y . com / article /
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 90--94
+\OT1/cmr/m/n/12 chine Learn-ing  |  google de-vel-op-ers,'' []$https : / / deve
+lopers . google . com /
+ []
+
+[55
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
+[]\OT1/cmr/m/n/12 J. Hale, ``Scale, Stan-dard-ize, or Nor-mal-ize
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
+\OT1/cmr/m/n/12 with Scikit-Learn,'' []$https : / / towardsdatascience . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
+\OT1/cmr/m/n/12 scale-[]standardize-[]or-[]normalize-[]with-[]scikit-[]learn-[]
+6ccc7d176a02# : [] : text =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
+\OT1/cmr/m/n/12 types % 20of % 20scales-[] ,[] RobustScaler ,[] value % 20 % E2
+ % 80 % 94 % 2025 % 25 %
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
+[]$\OT1/cmr/m/n/12 https : / / machinelearningmastery . com / dierence-[]test-
+[]validation-[]datasets/$[],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
+[]\OT1/cmr/m/n/12 R. Thakur, ``Step by step VGG16 im-ple-men-ta-tion in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
+\OT1/cmr/m/n/12 Keras for be-gin-ners,'' []$https : / / towardsdatascience . co
+m /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
+\OT1/cmr/m/n/12 step-[]by-[]step-[]vgg16-[]implementation-[]in-[]keras-[]for-[]
+beginners-[]a833c686ae6c$[],
+ []
+
+
+Underfull \hbox (badness 6691) in paragraph at lines 123--127
+[]\OT1/cmr/m/n/12 J. Brown-lee, ``Un-der-stand the Im-pact of Learn-ing Rate on
+ Neu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--127
+\OT1/cmr/m/n/12 ral Net-work Per-for-mance,'' []$https : / / machinelearningmas
+tery . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--127
+\OT1/cmr/m/n/12 understand-[]the-[]dynamics-[]of-[]learning-[]rate-[]on-[]deep-
+[]learning-[]neural-[]networks/$[],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
+[]\OT1/cmr/m/n/12 A. Kathuria, ``In-tro to op-ti-miza-tion in deep learn-ing: M
+o-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--133
+\OT1/cmr/m/n/12 men-tum, RM-SProp and Adam,'' []$https : / / blog . paperspace 
+. com /
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 129--133
+\OT1/cmr/m/n/12 intro-[]to-[]optimization-[]momentum-[]rmsprop-[]adam/$[], 2018
+, [On-line; ac-ce-dido
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 140--144
+[]\OT1/cmr/m/n/12 Y. Bohra, ``The Chal-lenge of Van-ish-ing/-Ex-plod-ing Gra-di
+-ents in Deep
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--144
+\OT1/cmr/m/n/12 Neu-ral Net-works,'' []$https : / / www . analyticsvidhya . com
+ / blog / 2021 / 06 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--144
+\OT1/cmr/m/n/12 the-[]challenge-[]of-[]vanishing-[]exploding-[]gradients-[]in-[
+]deep-[]neural-[]networks/$[],
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 146--150
+[]\OT1/cmr/m/n/12 K. Singh, ``How to Im-prove Class Im-bal-ance us-ing Class We
+ights in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--150
+\OT1/cmr/m/n/12 Ma-chine Learn-ing,'' []$https : / / www . analyticsvidhya . co
+m / blog / 2020 / 10 /
+ []
+
+) [56] (documentoLatexTesis.aux (portadaTesis.aux))
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `documentoLatexTesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6E2CE35B9A760F2F9A90F52C3DDC518E;3370.
+(rerunfilecheck)             Checksum: 9E202D7D459D6F170D6F78007F0AAC84;3949.
  ) 
 Here is how much of TeX's memory you used:
- 13746 strings out of 478681
- 208566 string characters out of 2859688
- 792939 words of memory out of 3000000
- 31464 multiletter control sequences out of 15000+600000
+ 14159 strings out of 478681
+ 215411 string characters out of 2859688
+ 926886 words of memory out of 3000000
+ 31598 multiletter control sequences out of 15000+600000
  413658 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,63p,853b,1297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,15n,63p,1005b,1897s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\estud\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Nueva c
 arpeta/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><D:/Nueva carpeta/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm
-/cmmi12.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Nuev
-a carpeta/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Nueva carpeta/fonts/type
-1/public/amsfonts/cm/cmr17.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm
-/cmr6.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Nueva c
-arpeta/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Nueva carpeta/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Nueva c
-arpeta/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on documentoLatexTesis.pdf (34 pages, 929277 bytes).
+/public/amsfonts/cm/cmex10.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Nue
+va carpeta/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Nueva carpeta/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmr17.pfb><D:/Nuev
+a carpeta/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Nueva carpeta/fonts/type1
+/public/amsfonts/cm/cmr7.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/c
+mr8.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Nueva c
+arpeta/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Nueva carpeta/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><D:/Nueva carpeta/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb>
+Output written on documentoLatexTesis.pdf (57 pages, 1166695 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 177 named destinations out of 1000 (max. 500000)
- 216 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 995 PDF objects out of 1000 (max. 8388607)
+ 443 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -107,4 +107,45 @@ J.~Brownlee, ``{What is the Difference Between Test and Validation Datasets?}''
   \url{https://machinelearningmastery.com/difference-test-validation-datasets/},
   2017, [Online; accedido 04-05-2022].
 
+\bibitem{VGG16implementation}
+R.~Thakur, ``{Step by step VGG16 implementation in Keras for beginners},''
+  \url{https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c},
+  2019, [Online; accedido 17-05-2022].
+
+\bibitem{kerasDocs}
+``{Keras},'' \url{https://keras.io/}, [Online; accedido 07-06-2022].
+
+\bibitem{binnaryCrossentropy}
+D.~Godoy, ``{Understanding binary cross-entropy / log loss: a visual
+  explanation},'' \url{https://keras.io/}, 2018, [Online; accedido 05-06-2022].
+
+\bibitem{learningRates}
+J.~Brownlee, ``{Understand the Impact of Learning Rate on Neural Network
+  Performance},''
+  \url{https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/},
+  2019, [Online; accedido 06-06-2022].
+
+\bibitem{RMSprop}
+A.~Kathuria, ``{Intro to optimization in deep learning: Momentum, RMSProp and
+  Adam},''
+  \url{https://blog.paperspace.com/intro-to-optimization-momentum-rmsprop-adam/},
+  2018, [Online; accedido 09-06-2022].
+
+\bibitem{regularization}
+A.~Nagpal, ``{L1 and L2 Regularization Methods},''
+  \url{https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c},
+  2017, [Online; accedido 09-06-2022].
+
+\bibitem{Vanishing}
+Y.~Bohra, ``{The Challenge of Vanishing/Exploding Gradients in Deep Neural
+  Networks},''
+  \url{https://www.analyticsvidhya.com/blog/2021/06/the-challenge-of-vanishing-exploding-gradients-in-deep-neural-networks/},
+  2021, [Online; accedido 02-06-2022].
+
+\bibitem{classWeights}
+K.~Singh, ``{How to Improve Class Imbalance using Class Weights in Machine
+  Learning},''
+  \url{https://www.analyticsvidhya.com/blog/2020/10/improve-class-imbalance-class-weights/},
+  2020, [Online; accedido 08-06-2022].
+
 \end{thebibliography}
