@@ -1,0 +1,1 @@
+Gradiante 0 o gradiante exponencial para lo de Loss = nan
