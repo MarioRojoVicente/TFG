@@ -30,45 +30,45 @@ Warning--empty journal in cortex59
 Warning--empty journal in neocognitron
 
 Done.
-You've used 26 entries,
+You've used 27 entries,
             4087 wiz_defined-function locations,
-            967 strings with 12088 characters,
-and the built_in function-call counts, 11294 in all, are:
-= -- 956
-> -- 128
+            971 strings with 12181 characters,
+and the built_in function-call counts, 11609 in all, are:
+= -- 979
+> -- 129
 < -- 34
-+ -- 71
++ -- 72
 - -- 25
-* -- 423
-:= -- 1991
-add.period$ -- 52
-call.type$ -- 26
-change.case$ -- 39
+* -- 432
+:= -- 2040
+add.period$ -- 54
+call.type$ -- 27
+change.case$ -- 41
 chr.to.int$ -- 72
-cite$ -- 33
-duplicate$ -- 940
-empty$ -- 1040
+cite$ -- 34
+duplicate$ -- 972
+empty$ -- 1076
 format.name$ -- 26
-if$ -- 2548
+if$ -- 2621
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 184
-newline$ -- 101
+int.to.str$ -- 27
+missing$ -- 191
+newline$ -- 104
 num.names$ -- 23
-pop$ -- 462
+pop$ -- 483
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 918
+skip$ -- 943
 stack$ -- 0
-substring$ -- 234
-swap$ -- 584
+substring$ -- 237
+swap$ -- 600
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 26
+type$ -- 27
 warning$ -- 7
 while$ -- 36
-width$ -- 28
-write$ -- 243
+width$ -- 29
+write$ -- 250
 (There were 3 error messages)

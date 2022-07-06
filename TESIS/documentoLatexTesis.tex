@@ -57,7 +57,7 @@
 	\section*{}
 	\begin{flushleft}
 		\vspace*{\fill}
-		To Francisco Díaz Perez, that not only helped me by directing this project but was the original creator of the idea behind it and kindly allowed me to further develop it under his close watch, to Rubén ... and Daniel Rebollar Medina who kindly shared their knowledge and experience with me in the complex nut beautiful world of Machine Learning, and last but not least to my always loving family without who´s unconditional support I could have never archived the feat of completing this paper. To all of you I express my sincerest gratitude from the bottom of my hart.
+		To Francisco Díaz Perez, that not only helped me by directing this project but was the original creator of the idea behind it and kindly allowed me to further develop it under his close watch, to Rubén Rincón Blanco and Daniel Rebollar Medina who kindly shared their knowledge and experience with me in the complex but beautiful world of Machine Learning, and last but not least to my always loving family without whose unconditional support I could have never achieved the feat of completing this paper. To all of you I express my sincerest gratitude from the bottom of my heart.
 		\vspace*{\fill}
 		
 	\end{flushleft}
@@ -66,13 +66,14 @@
 	
 	\section*{Abstract}
 	
-	This paper focuses on the objective a Machine Learning model to classify the advancement of Parkinson´s Disease on a patient given some audio recordings and general information, such as age and gender. For this we will utilize a dataset extracted from synapse to train the several proposed models and finally extract conclusions on the outcomes. This project focuses on the implementation of CNN models based of the VGG-16 architecture. The results ranges from a 30\% accuracy to around a 60\% on all three datasets (train, validation and test) depending on the model and its hyper parameters, as well as the processes applied on the data. In conclusion the project was lacking more instances of reliable data but shows the possibilities of implementing such models on bigger datasets with rather significant results.
+	This paper focuses on the objective a Machine Learning model to classify the advancement of Parkinson´s Disease on a patient given some audio recordings and general information, such as age and gender. For this we will utilize a dataset extracted from synapse to train the several proposed models and finally extract conclusions on the outcomes. This project focuses on the implementation of CNN models based of the VGG-16 architecture. The results ranges from a 30\% accuracy to around a 60\% on all three datasets (train, validation and test) depending on the model and its hyper parameters, as well as the processes applied on the data. In conclusion the project was lacking more instances of reliable data but shows the possibilities of implementing such models on bigger datasets with rather significant results. The final results of this paper allow us to define rules and procedures to be implemented in similar future projects.
 	
 	%purpose, method, scope, results, and conclusion
 	
 	\clearpage
 	
 	\tableofcontents
+	\listoffigures
 	
 	\clearpage
 		
@@ -112,7 +113,7 @@
 		
 	\subsection{Objective}
 	
-	The main objective is this paper is to implement a convolutional neuronal network based system for the early detection of Parkinson´s Disease based on the parametrization of audio recordings. In order to do so I will based my research on data taken out from Synapseg.
+	The main objective is this paper is to implement a convolutional neuronal network based system for the early detection of Parkinson´s Disease based on the parametrization of audio recordings. In order to do so I will based my research on data taken out from Synapse Project. \cite{synapse}
 	
 	This objective can be therefore subdivided in the following:
 	
@@ -160,13 +161,13 @@
 	\begin{itemize}
 		
 		
-		\item \textbf{Theoretical Bases:} where we will establish the basics in order to explain why we took most of the relevant decisions of this paper as well as study other possible developments and establish comparisons between those and the one selected.
+		\item \textbf{Theoretical Foundations:} where we will establish the basics in order to explain why we took most of the relevant decisions of this paper as well as study other possible developments and establish comparisons between those and the one selected.
 		
-		\item \textbf{Data:} where we will explain all the processes to which the data has been subjected as well as the reasons behind the implementation of every of this processes.
+		\item \textbf{Data Set Overview And Preprocessing:} where we will explain all the processes to which the data has been subjected as well as the reasons behind the implementation of every of this processes.
 		
 		\item \textbf{Implementing the CNN:} where we will explain the implementation process for the models as well as any problems that could arise during their implementation and what we do to try and solve them.
 		
-		\item \textbf{Conclusion:} where we will summarize the outcomes of this paper as well as analyze any possible flaws and strong points on the implementation of the project and the models implemented. In this section we will also realize a comparative analysis of the different models proposed for the implementation.
+		\item \textbf{Conclusions:} where we will summarize the outcomes of this paper as well as analyze any possible flaws and strong points on the implementation of the project and the models implemented. In this section we will also realize a comparative analysis of the different models proposed for the implementation.
 		
 		
 	\end{itemize}
@@ -179,17 +180,17 @@
 	
 	There are several concerns that need to be addressed when approaching this issue from a technological perspective, the first of which would be to decide on the type of data that is going to be fed into the algorithm.
 	
-	While some papers focus on the parametrization of the speech, such as "Diagnosis of Parkinson's disease using deep learning and cell phone voice recordings" \cite{deeplearningygrabaciones} others choose to analysis different sources of data that they feel could present interesting patterns. One possibility would be to realize a kinematic analysis of the patient, using data describing motion of upper and lower extremities, as implemented in "Artificial intelligence for assisting diagnostics and assessment of Parkinson’s disease—A review" \cite{belic2019artificial}, while several studies in the platform Synapse investigate the possibility of diagnosing Parkinson´s Disease through symptoms related to the loss of recent memory as well as the study of the patients manual abilities.
+	While some papers focus on the parametrization of the speech, such as a``Diagnosis of Parkinson's disease using deep learning and cell phone voice recordings" \cite{deeplearningygrabaciones} others choose to analysis different sources of data that they feel could present interesting patterns. One possibility would be to realize a kinematic analysis of the patient, using data describing motion of upper and lower extremities, as implemented in ``Artificial intelligence for assisting diagnostics and assessment of Parkinson’s disease—A review" \cite{belic2019artificial}, while several studies in the Synapse Project investigate the possibility of diagnosing Parkinson´s Disease through symptoms related to the loss of recent memory as well as the study of the patients manual abilities.
 	
-	When choosing the data to be sampled for the experiments it is also relevant to consider the pros and cons of selecting numerous sources of data versus choosing to focus on one specific type. For this paper I have decided to focus on studying voice recordings exclusively, as I find those to have great potential. Nonetheless, I will try to identify any possible relations between the outcomes of the machine learning algorithms application, and other data concerning the state of the patients such as several measurements related to the Unified Parkinson's Disease Rating Scale (UPDRS). The idea of utilizing speech analysis to detect and track the deterioration associated to the evolution of the disease comes from sysmtoms such as Dysarthria that affect this functions. \cite{cnntoformantmeasures}
+	When choosing the data to be sampled for the experiments it is also relevant to consider the pros and cons of selecting numerous sources of data versus choosing to focus on one specific type. For this paper I have decided to focus on studying voice recordings exclusively, as I find those to have great potential. Nonetheless, I will try to identify any possible relations between the outcomes of the machine learning algorithms application, and other data concerning the state of the patients such as several measurements related to the Unified Parkinson's Disease Rating Scale UPDRS. The idea of utilizing speech analysis to detect and track the deterioration associated to the evolution of the disease comes from sysmtoms such as Dysarthria that affect this functions. \cite{cnntoformantmeasures}
 	
-	After choosing the data, it needs to be analyzed in order to separate all the relevant information from the useless bits and noise, for that we will focus on analyzing sets of traits for the data that have previously proven good efficacy when utilizing IA and Deep learning. This will be later discussed on the \hyperref[sec:Data]{\textbf{Data}} section of this document.
+	After choosing the data, it needs to be analyzed in order to separate all the relevant information from the useless bits and noise, for that we will focus on analyzing sets of traits for the data that have previously proven good efficacy when utilizing IA and Deep learning. This will be later discussed on the \hyperref[sec:Data]{\textbf{Data Set Overview And Preprocessing}} section of this document.
 	
-	The last thing to do would then be to choose a Neuronal Network architecture to implement, but this will be furthered discussed in the following \hyperref[sec:TheoreticalBases]{\textbf{Theoretical Bases}} section.
+	The last thing to do would then be to choose a Neuronal Network architecture to implement, but this will be furthered discussed in the following \hyperref[sec:TheoreticalBases]{\textbf{Theoretical Foundations}} section.
 	
 	\clearpage
 	
-	\section{Theoretical Bases}
+	\section{Theoretical Foundations}
 	\label{sec:TheoreticalBases}
 	
 	In this paper we will be working within the field of Machine Learning, so in order to describe it I will refer to Tom Mitchell, who once described Machine Learning as: 
@@ -304,12 +305,12 @@
 	\end{figure}
 	\vspace{5mm}
 
-	From the two models previously presented I decided to apply in this paper the VGG-16 architecture, the smaller of the two, as the problem at hand only has a dimensionality of 40 (there are 40 attributes that will be imputed in the network), and if the models turns out to be too big for the problem it could lead to problems such as overfitting..
+	From the two models previously presented I decided to apply in this paper the VGG-16 architecture, the smaller of the two, as the problem at hand only has a dimensionality of 40 (there are 40 attributes that will be imputed in the network), and if the models turns out to be too big for the problem it could lead to problems such as overfitting.
 	
 	
 	\clearpage
 	
-	\section{Data}
+	\section{Data Set Overview And Preprocessing}
 	\label{sec:Data}
 	
 	In order to apply any Machine Learning algorithm we need a data set, in this case I will be utilizing one extracted from the Synapse platform. This data set provides 74 different data from a total of 779 participants, all of which has been previously anonymized. From the initial data I will only feed values for the following 40 attributes to the Neuronal Network:
@@ -446,26 +447,26 @@
 		return new_df
 	\end{lstlisting}
 
-	Finally to the several attributes with a value distribution similar to the one presented by "feature02" I thought about applying Log Scaling, which aims to compress a wide range of values into a smaller range and is nice to use when a handful of the values repeat many times as happens for those attributes.\cite{normalizationTechniques}
+	Finally to the several attributes with a value distribution similar to the one presented by ``feature02" I thought about applying Log Scaling, which aims to compress a wide range of values into a smaller range and is nice to use when a handful of the values repeat many times as happens for those attributes.\cite{normalizationTechniques}
 	
-	\[ x \forall Z \]
+	\[ \forall x \in Z \]
 	\[ f(x) = log(x) \]
 	
 	It was after my initial attempt that I realized that many of those attributes have features with zero and negative values which actually complicates the application of the Log Scaling and so I decided to try using the RobustScaler and StandardScaler from Python´s sklearn library.
 	
-	The RobustScaler uses the same formula $f(x) = (x - M)/(Q3-Q1)) $ where M stands for the median and Q1 and Q3 for the first and third quartiles of a distribution D for which $X \in D$.\cite{normalizeSkLearn}
+	The Robust Scaler uses the same formula $f(x) = (x - M)/(Q3-Q1)) $ where M stands for the median and Q1 and Q3 for the first and third quartiles of a distribution D for which $X \in D$.\cite{normalizeSkLearn}
 	
-	The StandardScaler uses the same formula that was implemented for calculating the Z-Score values in the clipZScores function shown above.
+	The Standard Scaler uses the same formula that was implemented for calculating the Z-Score values in the clipZScores function shown above.
 	
 	\begin{figure}[H]
 		\label{Feature03Comparidson}
 		\includegraphics[height=32mm]{img/plots/feature03N.png}
 		\includegraphics[height=32mm]{img/plots/feature03NStandard.png}
 		\includegraphics[height=32mm]{img/plots/feature03NRobust.png}
-		\caption[width=50mm]{Comparison for normalization applying max min, RobustScaler and StandardScaler. Feature03}
+		\caption[width=50mm]{Comparison for normalization applying max min, Robust Scaler and Standard Scaler. Feature03}
 	\end{figure}
 
-	As It can be appreciated in the different plots none of the different techniques got a final distribution closer to a normal than the others and so I decided to simply apply max min to all the attributes.
+	As it can be appreciated in the different plots none of the different techniques got a final distribution closer to a normal than the others and so I decided to simply apply max min to all the attributes.
 	
 	At this point in time I also assigned numerical values to "sex", which happens to be the only non numerical attribute  that was selected as input for the Neuronal Network. This particular attribute only has two possible values after the cleaning process which are "F" for female participants and "M" for male ones, and so the following function assigns the value 1 for male participants and 0 for female ones.
 	
@@ -590,12 +591,12 @@
 		\centering
 		\label{bigM1Squema}
 		\includegraphics[scale=0.50]{img/esquemaPequenoM1.png}
-		\caption{Effects of different learning rates on the learning process of a model. \cite{learningRates}}
+		\caption{Visual representation of the first model.}
 	\end{figure}
 	
 	Right after implementing the model there are several hyper parameters that need to be tuned so that the model can be compiled and trained, this are often selected by trial and error as well as the previous experience of the person in charge of the implementation of the NN. It was at this point in time, when I was going to start trying several configurations for the hyper parameters that the fist problem arose, \hyperref[sec:explodingGradientProblem]{\textbf{The Exploding Gradient Problem}}.
 	
-	After solving the issues with the gradient I was finally able to train the network and start establishing the hyperparameters, nonetheless after several trials I started to realize that no there was another issue, this time the algorithm was suffering of overfitting, due to the a problem with the balance og the Data. This issue is further addressed in the subsection of \hyperref[sec:problemUnbalanceData]{\textbf{The Problem With the Balance of the Data}}.
+	After solving the issues with the gradient I was finally able to train the network and start establishing the hyperparameters, nonetheless after several trials I started to realize that no there was another issue, this time the algorithm was suffering of overfitting, due to the a problem with the balance of the Data. This issue is further addressed in the subsection of \hyperref[sec:problemUnbalanceData]{\textbf{The Problem With the Balance of the Data}}.
 	
 	As for the hyper parameters selected for the model I will now explain which ones did I choose when considering the first model or binary classification model as it only had two classes, later on I will explain any changes that came through with the second model or the multi class classification model. As for the binary model I chose the following:
 	
@@ -803,9 +804,9 @@
 	\subsubsection{Implementing Weighted classes with SkLearn}
 	
 	
-	Class weights are values given to the different classes that constitute the outcome of the classification algorithm according to their representation within the training set of data. Usually the minority classes will be assigned bigger weights while the majority ones will often have a weight smaller than one. This weights are later fed to tha training algorithm and are used to penalize the misclassification of the elements of the minority classes while also lessening the importance of this same missclasification for the elements that belong to the mayority classes. In this way we can make the algorithm adapt to the skewness proper to the biased distribution.
+	Class weights are values given to the different classes that constitute the outcome of the classification algorithm according to their representation within the training set of data. Usually the minority classes will be assigned bigger weights while the majority ones will often have a weight smaller than one. This weights are later fed to the training algorithm and are used to penalize the misclassification of the elements of the minority classes while also lessening the importance of this same misclassification for the elements that belong to the majority classes. In this way we can make the algorithm adapt to the skewness proper to the biased distribution.
 	
-	To be more precise when implementing "balanced" class weights, the weights values assigned to each class are inversely proportional to the frecuency og that given class in the data set.\cite{classWeights}
+	To be more precise when implementing "balanced" class weights, the weights values assigned to each class are inversely proportional to the frequency of that given class in the data set.\cite{classWeights}
 	
 	\[ wj = n\_samples / (n\_classes * n\_samplesj) \] 
 	
@@ -1204,7 +1205,27 @@
 	
 	\clearpage
 	
+	\section*{Glossary}
 	
+	\begin{itemize}
+		
+		\item[] \textbf{CNN:} Convolutional Neural Network
+		
+		\item[] \textbf{VGG:} Visual Geometry Group CNN architecture
+		
+		\item[] \textbf{UPDRS:} Unified Parkinson’s Disease Rating Scale
+		
+		\item[] \textbf{MLS:} Machine Learning Systems
+		
+		\item[] \textbf{RNN:} Recursive Neuronal Network
+		
+		\item[] \textbf{ANN:} Artificial Neuronal Network
+		
+		\item[] \textbf{NN:} Neuronal Network
+		
+	\end{itemize}
+	
+	\clearpage
 	
 	\bibliography{bibliografia.bib}
 	

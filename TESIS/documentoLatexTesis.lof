@@ -1,0 +1,15 @@
+\babel@toc {english}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Visual representation of the effects of convolution layers.\cite {handsonmachinelearning}}}{14}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Visual representation of the effects of pooling layers. \cite {handsonmachinelearning}}}{14}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Visual representation of a VGG architecture. \cite {VGGimg}}}{15}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Histogram for a normalized attribute with outliers. Feature02}}{20}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Histogram for a normalized attribute with outliers. Feature24}}{21}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Histogram for a normalized and clipped attribute. Feature24}}{21}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces width=50mm}}{23}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Visual representation of the first model.}}{28}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Effects of different learning rates on the learning process of a model. \cite {learningRates}}}{30}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Sigmoid function and it´s derivative. \cite {Vanishing}}}{33}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Confusion Matrix for the predictions of the model trained with unbalanced data.}}{37}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Label distribution for the unbalanced train data set.}}{38}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Distribution for the sum of the different attributes associated to the UPDRS within the data set.}}{42}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Distribution for the classes created based of sum of the different attributes associated to the UPDRS within the data set.}}{44}{figure.14}%

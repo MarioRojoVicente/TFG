@@ -1,22 +1,22 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Context}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Objective}{6}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Document Structure}{7}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}State Of Art}{8}{subsection.1.4}%
-\contentsline {section}{\numberline {2}Theoretical Bases}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Types of Machine Learning Systems }{10}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}The CNN Model and VGG Architecture}{12}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Data}{15}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Cleaning The Data Set }{17}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Normalizing The Data Set And Transforming Non Numerical Values }{19}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Splitting The Data Set}{23}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Generating The Labels}{25}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Implementation of the CNN}{26}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The Exploding Gradient Problem.}{32}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}The Problem With the Balance of the Data}{35}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Implementing Weighted classes with SkLearn}{38}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Stablishing A clasification System Based on the UPDRS}{40}{subsubsection.4.2.2}%
-\contentsline {section}{\numberline {5}Conclusions}{51}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Possible Future Work Lines}{53}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Social Implications}{54}{subsection.5.2}%
+\contentsline {section}{\numberline {1}Introduction}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Context}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Objective}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Document Structure}{8}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}State Of Art}{9}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Theoretical Foundations}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Types of Machine Learning Systems }{11}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The CNN Model and VGG Architecture}{13}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Data Set Overview And Preprocessing}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Cleaning The Data Set }{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Normalizing The Data Set And Transforming Non Numerical Values }{20}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Splitting The Data Set}{24}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Generating The Labels}{26}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Implementation of the CNN}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Exploding Gradient Problem.}{33}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The Problem With the Balance of the Data}{36}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Implementing Weighted classes with SkLearn}{39}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Stablishing A clasification System Based on the UPDRS}{41}{subsubsection.4.2.2}%
+\contentsline {section}{\numberline {5}Conclusions}{52}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Possible Future Work Lines}{54}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Social Implications}{55}{subsection.5.2}%

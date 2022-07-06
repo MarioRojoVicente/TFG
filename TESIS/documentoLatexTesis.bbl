@@ -38,6 +38,10 @@ C.~Frank, G.~Pari, and J.~P. Rossiter, ``Approach to diagnosis of parkinson
   disease.'' \emph{Canadian family physician}, vol.~52, no.~7, pp. 862--868,
   2006.
 
+\bibitem{synapse}
+``{TheSynapseProject},'' \url{https://the-synapse-project.org/}, [Online;
+  accedido 20-06-2022].
+
 \bibitem{handsonmachinelearning}
 A.~Géron, \emph{Hands-On Machine Learning with Scikit-Learn, Keras, and
   TensorFlow}.\hskip 1em plus 0.5em minus 0.4em\relax O’Reilly Media, Inc.,
@@ -112,18 +116,18 @@ R.~Thakur, ``{Step by step VGG16 implementation in Keras for beginners},''
   \url{https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c},
   2019, [Online; accedido 17-05-2022].
 
+\bibitem{learningRates}
+J.~Brownlee, ``{Understand the Impact of Learning Rate on Neural Network
+  Performance},''
+  \url{https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/},
+  2019, [Online; accedido 06-06-2022].
+
 \bibitem{kerasDocs}
 ``{Keras},'' \url{https://keras.io/}, [Online; accedido 07-06-2022].
 
 \bibitem{binnaryCrossentropy}
 D.~Godoy, ``{Understanding binary cross-entropy / log loss: a visual
   explanation},'' \url{https://keras.io/}, 2018, [Online; accedido 05-06-2022].
-
-\bibitem{learningRates}
-J.~Brownlee, ``{Understand the Impact of Learning Rate on Neural Network
-  Performance},''
-  \url{https://machinelearningmastery.com/understand-the-dynamics-of-learning-rate-on-deep-learning-neural-networks/},
-  2019, [Online; accedido 06-06-2022].
 
 \bibitem{RMSprop}
 A.~Kathuria, ``{Intro to optimization in deep learning: Momentum, RMSProp and
